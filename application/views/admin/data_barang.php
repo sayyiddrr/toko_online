@@ -3,7 +3,7 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>NO</th>
+            <th>NOMER</th>
             <th>NAMA BARANG</th>
             <th>KETERANGAN</th>
             <th>KATEGORI</th>
