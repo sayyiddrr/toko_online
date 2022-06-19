@@ -35,7 +35,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">Belum Memiliki Akun? Daftar!</a>
+                                        <a class="small" href="<?php echo base_url('registrasi/index'); ?>">Belum Memiliki Akun? Daftar!</a>
                                     </div>
                                 </div>
                             </div>
