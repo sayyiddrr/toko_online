@@ -93,11 +93,13 @@ class Data_barang extends CI_Controller{
         redirect('admin/data_barang/index');
     }
 
-    public function detail_data($id){
+    public function detail($id)
+    {
+        $where = array('id_brg'=> $id);
+        $data['barang'] = $this->model_barang->detail_brg($id);
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/detail_data', $data);
         $this->load->view('templates_admin/footer');
     }
-
 }
