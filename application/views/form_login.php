@@ -35,6 +35,9 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
+                                        <a class="small" href="">Lupa password?</a>
+                                    </div>
+                                    <div class="text-center">
                                         <a class="small" href="<?php echo base_url('registrasi/index'); ?>">Belum Memiliki Akun? Daftar!</a>
                                     </div>
                                 </div>
