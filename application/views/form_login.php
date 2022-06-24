@@ -27,9 +27,23 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Masukkan Password Anda" name="password">
+                                                <br>
+                                                <input type="checkbox" onclick="lihatpassword()">Show Password</input>
+
+                                                <script>
+                                                    function lihatpassword() {
+                                                        var pass = document.getElementById("exampleInputPassword");
+                                                        if(pass.type=="password"){
+                                                        pass.type="text";
+                                                        }
+                                                        else {
+                                                        pass.type="password";
+                                                        }
+                                                    }
+                                                </script>
                                                 <?php echo form_error('password', '<div class="text-danger small ml-2">','</div>') ?>
                                         </div>
-                                        
+                                      
                                        <button type="submit" class="btn btn-primary form-control">Login</button>
                                         
                                     </form>
