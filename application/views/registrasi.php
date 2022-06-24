@@ -26,13 +26,41 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
+                                        <input type="password" value="" class="form-control form-control-user"
                                             id="exampleInputPassword" placeholder="Password" name="password_1">
+                                            <br>
+                                            <input type="checkbox" onclick="lihatpassword()"> Show Password</input>
+
+                                            <script>
+                                                function lihatpassword() {
+                                                    var pass = document.getElementById("exampleInputPassword");
+                                                    if(pass.type=="password"){
+                                                        pass.type="text";
+                                                    }
+                                                    else {
+                                                        pass.type="password";
+                                                    }
+                                                }
+                                            </script>
                                         <?php echo form_error('password_1', '<div class="text-danger small ml-2">', '</div>') ?>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
+                                        <input type="password" value="" class="form-control form-control-user"
                                             id="exampleRepeatPassword" placeholder="Ulangi Password" name="password_2">
+                                            <br>
+                                            <input type="checkbox" onclick="ulangipassword()"> Show Password</input>
+
+                                            <script>
+                                                function ulangipassword() {
+                                                    var pass = document.getElementById("exampleRepeatPassword");
+                                                    if(pass.type=="password"){
+                                                        pass.type="text";
+                                                    }
+                                                    else {
+                                                        pass.type="password";
+                                                    }
+                                                }
+                                            </script>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">Daftar</button>
