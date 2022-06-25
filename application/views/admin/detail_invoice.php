@@ -1,40 +1,55 @@
-<div class="container-fluid">
-    <h4>Detail Pesanan <div class="btn btn-sm btn-success">No. Invoice: <?php echo $invoice->id ?></div> </h4>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Order Details
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Invoices</li>
+        <li class="active">order details</li>
+      </ol>
+    </section>
 
-    <table class="table table-bordered table-hover table-striped">
+    <section class="content">
+        <h4>Detail Pesanan <div class="btn btn-sm btn-success">No. Invoice: <?php echo $invoice->id ?></div> </h4>
 
-        <tr>
-            <th>ID BARANG</th>
-            <th>NAMA PRODUK</th>
-            <th>JUMLAH PESANAN</th>
-            <th>HARGA SATUAN</th>
-            <th>SUB-TOTAL</th>
-        </tr>
+        <table class="table table-bordered table-hover table-striped">
+
+            <tr>
+                <th>ID BARANG</th>
+                <th>NAMA PRODUK</th>
+                <th>JUMLAH PESANAN</th>
+                <th>HARGA SATUAN</th>
+                <th>SUB-TOTAL</th>
+            </tr>
 
 
-        <?php
-        $total = 0;
-        foreach ($pesanan as $psn) :
-            $subtotal = $psn->jumlah * $psn->harga;
-            $total += $subtotal;
-        ?>
+            <?php
+            $total = 0;
+            foreach ($pesanan as $psn) :
+                $subtotal = $psn->jumlah * $psn->harga;
+                $total += $subtotal;
+            ?>
 
-        <tr>
-            <td><?php echo $psn->id_brg?></td>
-            <td><?php echo $psn->nama_brg?></td>
-            <td><?php echo $psn->jumlah?></td>
-            <td><?php echo number_format($psn->harga,0,',','.') ?></td>
-            <td><?php echo number_format($subtotal,0,',','.') ?></td>
-        </tr>
+            <tr>
+                <td><?php echo $psn->id_brg?></td>
+                <td><?php echo $psn->nama_brg?></td>
+                <td><?php echo $psn->jumlah?></td>
+                <td><?php echo number_format($psn->harga,0,',','.') ?></td>
+                <td><?php echo number_format($subtotal,0,',','.') ?></td>
+            </tr>
 
-        <?php endforeach; ?>
+            <?php endforeach; ?>
 
-        <tr>
-            <td colspan="4" align="right">Grand Total</td>
-            <td align="right">Rp. <?php echo number_format($total,0,',','.') ?></td>
-        </tr>
+            <tr>
+                <td colspan="4" align="right">Grand Total</td>
+                <td align="right">Rp. <?php echo number_format($total,0,',','.') ?></td>
+            </tr>
 
-    </table>
+        </table>
 
-    <a href="<?php echo base_url('admin/invoice/index')?>"><div class="btn btn-sm btn-primary">kembali</div></a>
+        <a href="<?php echo base_url('admin/invoice/index')?>"><div class="btn btn-sm btn-primary">kembali</div></a>
+    </section>
+
 </div>
