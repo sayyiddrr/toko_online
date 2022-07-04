@@ -21,6 +21,12 @@
 
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="e-mail Anda" name="e-mail">
+                                    <?php echo form_error('e-mail', '<div class="text-danger small ml-2">', '</div>') ?>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="Username Anda" name="username">
                                     <?php echo form_error('username', '<div class="text-danger small ml-2">', '</div>') ?>
                                 </div>

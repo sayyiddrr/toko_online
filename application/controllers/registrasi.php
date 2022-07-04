@@ -5,6 +5,7 @@ class Registrasi extends CI_Controller{
     public function index()
     {
         $this->form_validation->set_rules('nama', 'Nama', 'required', ['required' => 'Nama Wajib Diisi!']);
+        $this->form_validation->set_rules('e-mail', 'e-mail', 'required', ['required' => 'e-mail Wajib Diisi!']);
         $this->form_validation->set_rules('username', 'Username', 'required', ['required' => 'Username Wajib Diisi!']);
         $this->form_validation->set_rules('password_1', 'Password', 'required|matches[password_2]', ['required' => 'Password Wajib Diisi!', 'matches' => 'Password Tidak Cocok!']);
         $this->form_validation->set_rules('password_2', 'Password', 'required|matches[password_1]');
@@ -17,6 +18,7 @@ class Registrasi extends CI_Controller{
             $data = array(
                 'id'        => '',
                 'nama'      => $this->input->post('nama'),
+                'e-mail'    => $this->input->post('e-mail'),
                 'username'  => $this->input->post('username'),
                 'password'  => $this->input->post('password_1'),
                 'role_id'   => 2,
