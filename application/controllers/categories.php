@@ -23,5 +23,11 @@ class Categories extends CI_Controller{
         $this->cart->insert($data);
         redirect('categories');
     }
+
+    public function detail_keranjang(){
+        $this->load->view('templates/karma/header');
+        $this->load->view('keranjang');
+        $this->load->view('templates/karma/footer');
+    }
 }
 ?>
