@@ -29,7 +29,9 @@ class Auth extends CI_Controller {
                 switch($auth->role_id){
                     case 1 : redirect('admin/dashboard_admin');
                             break;
-                    case 2 : redirect('welcome');
+                    case 2 : redirect('tenant/dashboard_tenant');
+                            break;
+                    case 3 : redirect('welcome');
                             break; 
                     default: break;
                 }
