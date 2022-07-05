@@ -22,6 +22,7 @@
                 <table class="table">
                     <thead>
                         <tr>
+                            <th scope="col">No</th>
                             <th scope="col">Product</th>
                             <th scope="col">Price</th>
                             <th scope="col">Quantity</th>
@@ -30,9 +31,10 @@
                     </thead>
                     <tbody>
                     <?php 
-                    
+                    $no=1;
                     foreach($this->cart->contents() as $items) : ?>
                         <tr>
+                            <td><h5><?php echo $no++ ?></h5></td>
                             <td>
                                 <div class="media">
                                     <div class="media-body">
@@ -49,21 +51,10 @@
                             </td>
                         </tr>
                     <?php endforeach; ?>
-                        <tr class="bottom_button">
-                            <td>
-                                
-                            </td>
-                            <td>
-
-                            </td>
-                            <td>
-
-                            </td>
-                            <td>
-                               
-                            </td>
-                        </tr>
                         <tr>
+                            <td>
+
+                            </td>
                             <td>
 
                             </td>
@@ -77,40 +68,6 @@
                                 <h5>Rp. <?php echo number_format($this->cart->total(), 0,',','.') ?></h5>
                             </td>
                         </tr>
-                        <tr class="shipping_area">
-                            <td>
-
-                            </td>
-                            <td>
-
-                            </td>
-                            <td>
-                                <h5>Shipping</h5>
-                            </td>
-                            <td>
-                                <div class="shipping_box">
-                                    <ul class="list">
-                                        <li><a href="#">Flat Rate: $5.00</a></li>
-                                        <li><a href="#">Free Shipping</a></li>
-                                        <li><a href="#">Flat Rate: $10.00</a></li>
-                                        <li class="active"><a href="#">Local Delivery: $2.00</a></li>
-                                    </ul>
-                                    <h6>Calculate Shipping <i class="fa fa-caret-down" aria-hidden="true"></i></h6>
-                                    <select class="shipping_select">
-                                        <option value="1">Bangladesh</option>
-                                        <option value="2">India</option>
-                                        <option value="4">Pakistan</option>
-                                    </select>
-                                    <select class="shipping_select">
-                                        <option value="1">Select a State</option>
-                                        <option value="2">Select a State</option>
-                                        <option value="4">Select a State</option>
-                                    </select>
-                                    <input type="text" placeholder="Postcode/Zipcode">
-                                    <a class="gray_btn" href="#">Update Details</a>
-                                </div>
-                            </td>
-                        </tr>
                         <tr class="out_button_area">
                             <td>
 
@@ -122,9 +79,12 @@
 
                             </td>
                             <td>
+
+                            </td>
+                            <td>
                                 <div class="checkout_btn_inner d-flex align-items-center">
-                                    <a class="gray_btn" href="#">Continue Shopping</a>
-                                    <a class="primary-btn" href="#">Proceed to checkout</a>
+                                    <a class="gray_btn" href="<?php echo base_url('categories') ?>">Continue Shopping</a>
+                                    <a class="primary-btn" href="<?php echo base_url('dashboard/pembayaran') ?>">Proceed to checkout</a>
                                 </div>
                             </td>
                         </tr>
