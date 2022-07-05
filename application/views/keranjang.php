@@ -82,9 +82,10 @@
 
                             </td>
                             <td>
-                                <div class="checkout_btn_inner d-flex align-items-center">
-                                    <a class="gray_btn" href="<?php echo base_url('categories') ?>">Continue Shopping</a>
-                                    <a class="primary-btn" href="<?php echo base_url('dashboard/pembayaran') ?>">Proceed to checkout</a>
+                                <div class="checkout_btn_inner d-flex align-items-right">
+                                    <a class="genric-btn success" href="<?php echo base_url('categories') ?>">Continue Shopping</a>
+                                    <a class="genric-btn danger" href="<?php echo base_url('dashboard/hapus_keranjang') ?>">Clear Cart</a>
+                                    <a class="genric-btn primary" href="<?php echo base_url('dashboard/pembayaran') ?>">Proceed to Checkout</a>
                                 </div>
                             </td>
                         </tr>

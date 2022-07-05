@@ -59,7 +59,7 @@
 									<li class="nav-item"><a class="nav-link" href="single-product.html">Official Store</a></li>
 									<li class="nav-item"><a class="nav-link" href="checkout.html">Discount</a></li>
 									<li class="nav-item"><a class="nav-link" href="cart.html">Best Seller</a></li>
-									<li class="nav-item"><a class="nav-link" href="confirmation.html">Checkout</a></li>
+									<li class="nav-item"><a class="nav-link" href="<?php echo base_url('dashboard/pembayaran') ?>">Checkout</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">

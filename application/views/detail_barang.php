@@ -1,51 +1,51 @@
-<div class="container-fluid">
-
-    <div class="card">
-        <div class="card-header">Detail Produk</div>
-        <div class="card-body">
-    
-            <?php foreach($barang as $brg):?>
-                <div class="row">
-                    <div class="col-md-4">  
-                            <img src="<?php echo base_url().'/uploads/'.$brg->gambar ?>" class="card-img-top">
-                    </div>
-                    <div class="col-md-8">  
-                        <table class="table">
-                            <tr>
-                                <td>Nama Produk</td>
-                                <td><strong><?php echo $brg->nama_brg?></strong></td>
-                            </tr>
-
-                            <tr>
-                                <td>Keterangan</td>
-                                <td><strong><?php echo $brg->keterangan?></strong></td>
-                            </tr>
-
-                            <tr>
-                                <td>Kategori</td>
-                                <td><strong><?php echo $brg->kategori?></strong></td>
-                            </tr>
-
-                            <tr>
-                                <td>Stok</td>
-                                <td><strong><?php echo $brg->stok?></strong></td>
-                            </tr>
-
-                            <tr>
-                                <td>Harga</td>
-                                <td><strong><div class="btn btn-sm btn-success">Rp. <?php echo number_format($brg->harga,0,',','.')?></div>  </strong></td>
-                            </tr>
-                        </table>
-
-                        <?php echo anchor('dashboard/tambah_ke_keranjang/'.$brg->id_brg,'<div class="btn btn-sm btn-primary">Add to Chart</div>') ?>
-
-                        <?php echo anchor('dashboard/index/','<div class="btn btn-sm btn-danger">Back</div>') ?>
-                    </div>
-
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Product Details</h1>
+                <nav class="d-flex align-items-center">
+                    <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="single-product.html">product-details</a>
+                </nav>
             </div>
-
-    <?php   endforeach?>
         </div>
     </div>
+</section>
+<!-- End Banner Area -->
 
+<!--================Single Product Area =================-->
+<div class="product_image_area">
+    <div class="container">
+        <?php foreach($barang as $brg):?>
+            <div class="row s_product_inner">
+                <div class="col-lg-6">
+                    <div class="single-prd-item">
+                        <img class="img-fluid" src="<?php echo base_url().'/uploads/'.$brg->gambar ?>" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="s_product_text">
+                        <h3><?php echo $brg->nama_brg?></h3>
+                        <h2>Rp. <?php echo number_format($brg->harga,0,',','.')?></h2>
+                        <ul class="list">
+                            <li><a class="active" href="#"><span>Category</span><?php echo $brg->kategori?></a></li>
+                            <li><a href="#"><span>In Stock</span><?php echo $brg->stok?></a></li>
+                        </ul>
+                        <p>Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for
+                            something that can make your interior look awesome, and at the same time give you the pleasant warm feeling
+                            during the winter.</p>
+                        <div class="card_area d-flex align-items-center">
+                            <a class="primary-btn" href="<?php echo base_url('categories/tambah_ke_keranjang/'.$brg->id_brg )?>">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php   endforeach?>
+    </div>
 </div>
+<br>
+<br>
+<br>
+<!--================End Single Product Area =================-->
