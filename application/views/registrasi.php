@@ -25,11 +25,15 @@
                                     <?php echo form_error('email', '<div class="text-danger small ml-2">', '</div>') ?>
                                 </div>
 
+                                
+
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="role_id Anda" name="role_id">
-                                    <?php echo form_error('role_id', '<div class="text-danger small ml-2">', '</div>') ?>
-                                </div>
+                                    <label>Role_Id</label>
+                                    <select class="form-control" name="role_id">
+                                    <option>2 For Seller</option>
+                                    <option>3 For Customer</option>
+                                    </select>
+                                 </div>
 
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="exampleInputEmail"

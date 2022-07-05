@@ -76,7 +76,7 @@
                   <label>Role_Id</label>
                   <select class="form-control" name="role_id">
                   <option>1 For Admin Marketplace</option>
-                  <option>2 For Admin Tenant</option>
+                  <option>2 For Seller</option>
                   <option>3 For Customer</option>
                   </select>
               </div>
