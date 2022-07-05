@@ -9,6 +9,7 @@ class Registrasi extends CI_Controller{
         $this->form_validation->set_rules('username', 'Username', 'required', ['required' => 'Username Wajib Diisi!']);
         $this->form_validation->set_rules('password_1', 'Password', 'required|matches[password_2]', ['required' => 'Password Wajib Diisi!', 'matches' => 'Password Tidak Cocok!']);
         $this->form_validation->set_rules('password_2', 'Password', 'required|matches[password_1]');
+        $this->form_validation->set_rules('role_id', 'role_id', 'required', ['required' => 'role_id Wajib Diisi!']);
 
         if($this->form_validation->run() == FALSE) {
             $this->load->view('templates/header');
@@ -21,7 +22,7 @@ class Registrasi extends CI_Controller{
                 'e-mail'    => $this->input->post('email'),
                 'username'  => $this->input->post('username'),
                 'password'  => $this->input->post('password_1'),
-                'role_id'   => 2,
+                'role_id'   => $this->input->post('role_id'),
             );
 
             $this->db->insert('tb_user',$data);
