@@ -44,10 +44,9 @@ class dashboard extends CI_Controller{
     }
 
     public function pembayaran(){
-        $this->load->view('templates/header');
-        $this->load->view('templates/sidebar');
+        $this->load->view('templates/karma/header');
         $this->load->view('pembayaran');
-        $this->load->view('templates/footer');
+        $this->load->view('templates/karma/footer');
 
     }
     public function proses_pesanan(){
