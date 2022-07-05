@@ -19,7 +19,7 @@ class Registrasi extends CI_Controller{
             $data = array(
                 'id'        => '',
                 'nama'      => $this->input->post('nama'),
-                'e-mail'    => $this->input->post('email'),
+                'email'    => $this->input->post('email'),
                 'username'  => $this->input->post('username'),
                 'password'  => $this->input->post('password_1'),
                 'role_id'   => $this->input->post('role_id'),

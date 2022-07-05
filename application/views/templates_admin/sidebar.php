@@ -42,6 +42,11 @@
                 <i class="fa fa-fw fa-file"></i>
                 <span>Invoice</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/data_user') ?>">
+                <i class="fa fa-fw fa-user"></i>
+                <span>Data User</span></a>
+        </li>
       
       </ul>
     </section>
