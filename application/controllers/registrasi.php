@@ -12,9 +12,7 @@ class Registrasi extends CI_Controller{
         $this->form_validation->set_rules('role_id', 'role_id', 'required', ['required' => 'role_id Wajib Diisi!']);
 
         if($this->form_validation->run() == FALSE) {
-            $this->load->view('templates/header');
             $this->load->view('registrasi');
-            $this->load->view('templates/footer');
         } else {
             $data = array(
                 'id_usr'    => '',
