@@ -33,9 +33,7 @@
                             <li><a class="active" href="#"><span>Category</span><?php echo $brg->kategori?></a></li>
                             <li><a href="#"><span>In Stock</span><?php echo $brg->stok?></a></li>
                         </ul>
-                        <p>Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for
-                            something that can make your interior look awesome, and at the same time give you the pleasant warm feeling
-                            during the winter.</p>
+                        <p><?php echo $brg->keterangan?></p>
                         <div class="card_area d-flex align-items-center">
                             <a class="primary-btn" href="<?php echo base_url('categories/tambah_ke_keranjang/'.$brg->id_brg )?>">Add to Cart</a>
                         </div>

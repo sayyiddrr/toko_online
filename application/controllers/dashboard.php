@@ -53,10 +53,9 @@ class dashboard extends CI_Controller{
         $is_processed = $this->model_invoice->index();
         if($is_processed){
             $this->cart->destroy();
-            $this->load->view('templates/header');
-            $this->load->view('templates/sidebar');
+            $this->load->view('templates/karma/header');
             $this->load->view('proses_pesanan');
-            $this->load->view('templates/footer');
+            $this->load->view('templates/karma/footer');
         } else{
             echo "Sorry Your Order is Failed";
         }
@@ -69,4 +68,17 @@ class dashboard extends CI_Controller{
         $this->load->view('detail_barang',$data);
         $this->load->view('templates/karma/footer');
     }
+
+    public function official_store(){
+        $this->load->view('templates/karma/header');
+        $this->load->view('official_store');
+        $this->load->view('templates/karma/footer');
+    }
+
+    public function discount(){
+        $this->load->view('templates/karma/header');
+        $this->load->view('discount');
+        $this->load->view('templates/karma/footer');
+    }
+
 }

@@ -17,9 +17,9 @@ class Registrasi extends CI_Controller{
             $this->load->view('templates/footer');
         } else {
             $data = array(
-                'id_usr'        => '',
-                'nama_usr'      => $this->input->post('nama'),
-                'email'    => $this->input->post('email'),
+                'id_usr'    => '',
+                'nama_usr'  => $this->input->post('nama'),
+                'email'     => $this->input->post('email'),
                 'username'  => $this->input->post('username'),
                 'password'  => $this->input->post('password_1'),
                 'role_id'   => $this->input->post('role_id'),

@@ -8,9 +8,8 @@ class Auth extends CI_Controller {
         $this->form_validation->set_rules('password','password','required',['required' => 'Password wajib diisi']);
         if ($this->form_validation->run() == FALSE)
         {
-            $this->load->view('templates/header');
             $this->load->view('form_login');
-            $this->load->view('templates/footer');
+
         }else{
             $auth = $this->model_auth->cek_login();
 
