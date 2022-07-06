@@ -71,30 +71,49 @@
                             </select>
                         </div>
                         
-                        <div class="row col-md-12 form-group">
+                        <div class="col-md-12 form-group row">
                             <div class="col-md-6">
                                 <input type="password" value="" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password_1">
                             </div>
                             <div class="col-md-6">
-                                <input type="password" value="" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Ulangi Password" name="password_2">
+                                <input type="password" value="" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Re-type" name="password_2">
                             </div>
-                            <div class="creat_account">
-                                <input type="checkbox" onclick="loginlihatpassword()"> Show Password</input>
+                            <div class="row creat_account">
+                                <div class="col-md-6">
+                                    <input type="checkbox" onclick="loginlihatpassword()"> Show Password</input>
 
-                                <script>
-                                    function loginlihatpassword() {
-                                        var pass = document.getElementById("pass1", "pass2");
-                                        if(pass.type=="password"){
-                                        pass.type="text";
+                                    <script>
+                                        function loginlihatpassword() {
+                                            var pass = document.getElementById("exampleInputPassword");
+                                            if(pass.type=="password"){
+                                            pass.type="text";
+                                            }
+                                            else {
+                                            pass.type="password";
+                                            }
                                         }
-                                        else {
-                                        pass.type="password";
+                                    </script>
+                                    <?php echo form_error('password_1', '<div class="text-danger small ml-2">', '</div>') ?>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="checkbox" onclick="ulangipassword()"> Show Password</input>
+
+                                    <script>
+                                        function ulangipassword() {
+                                            var pass = document.getElementById("exampleRepeatPassword");
+                                            if(pass.type=="password"){
+                                            pass.type="text";
+                                            }
+                                            else {
+                                            pass.type="password";
+                                            }
                                         }
-                                    }
-                                </script>
-                            <?php echo form_error('password_1', '<div class="text-danger small ml-2">', '</div>') ?>
-                            </div>
+                                    </script>
+
+                                </div>
                             
+                            
+                            </div>
                         </div>
                         <div class="col-md-12 form-group">
                             <button type="submit" value="submit" class="primary-btn">Register</button>
