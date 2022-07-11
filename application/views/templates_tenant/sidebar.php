@@ -28,17 +28,17 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/dashboard_admin') ?>">
+            <a class="nav-link" href="<?php echo base_url('tenant/dashboard_tenant') ?>">
                 <i class="fa fa-fw fa-dashboard"></i>
                 <span>Dashboard</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/data_barang') ?>">
+            <a class="nav-link" href="<?php echo base_url('tenant/data_barang') ?>">
                 <i class="fa fa-fw fa-database"></i>
                 <span>Data Barang</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/invoice') ?>">
+            <a class="nav-link" href="<?php echo base_url('tenant/invoice') ?>">
                 <i class="fa fa-fw fa-file"></i>
                 <span>Invoice</span></a>
         </li>
