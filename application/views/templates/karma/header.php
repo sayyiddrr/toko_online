@@ -75,9 +75,11 @@
 									<li class="nav-item"><a class="nav-link" href="<?php echo base_url('auth/login') ?>">Login</a></li>
 									<li class="nav-item"><a class="nav-link" href="<?php echo base_url('auth/logout') ?>">Logout</a></li>
 									<li class="nav-item"><a class="nav-link" href="<?php echo base_url('registrasi') ?>">Register</a></li>
+									<li class="nav-item"><a class="nav-link" href="<?php echo base_url('dashboard/myaccount') ?>">myaccount</a></li>
 								</ul>
 							</li>
 						</ul>
+
 						<ul class="nav navbar-nav navbar-right">
 							<li class="nav-item"><a href="<?php echo base_url('dashboard/detail_keranjang') ?>" class="cart"><span class="ti-bag"></span></a></li>
 							<li class="nav-item">

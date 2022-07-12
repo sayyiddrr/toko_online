@@ -81,4 +81,13 @@ class dashboard extends CI_Controller{
         $this->load->view('templates/karma/footer');
     }
 
+    public function myaccount(){
+        $this->load->view('user/myaccount');
+    }
+
+    public function invoice(){
+        $this->load->view('user/dashboard_invoice');
+        
+    }
+
 }

@@ -1,0 +1,30 @@
+input:invalid {
+  background: pink;
+}
+
+.input-form {
+  width: 95%;
+  background: #F9F9F9;
+  margin: 0.9%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.input-form-number {
+  width: 12%;
+  background: #F9F9F9;
+  margin: 1%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.input-form-value {
+  width: 57.5%;
+  background: #F9F9F9;
+  margin: 1%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
