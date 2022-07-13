@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-lg-5 offset-lg-1">
                     <div class="s_product_text">
-                        <h3><?php echo $slr->nama?></h3>
+                        <h3><?php echo $slr->nama_tenant?></h3>
                         <h2>TOTAL TERJUAL: <?php echo ($slr->jumlah)?></h2>
                     
                     </div>

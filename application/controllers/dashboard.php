@@ -114,14 +114,15 @@ class dashboard extends CI_Controller{
 
     public function best_tenant(){
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
-        $data['seller'] = $this->db->query("SELECT tb_customer.*, COUNT(tb_order.custID) as jumlah
-                                            FROM tb_order, tb_customer
-                                            WHERE tb_customer.custID = tb_order.custID
-                                            GROUP BY tb_order.custID
+        $data['seller'] = $this->db->query("SELECT tb_tenant.*, COUNT(tb_orderdetail.produkID) as jumlah
+                                            FROM tb_tenant, tb_orderdetail, tb_produk
+                                            WHERE tb_tenant.tenantID = tb_produk.tenantID
+                                            AND tb_produk.produkID = tb_orderdetail.produkID
+                                            GROUP BY tb_tenant.nama_tenant
                                             ORDER BY jumlah DESC
                                             LIMIT 1")->result();
         $this->load->view('templates/karma/header', $data);
-        $this->load->view('best_member', $data);
+        $this->load->view('best_tenant', $data);
         $this->load->view('templates/karma/footer');
     }
 }
