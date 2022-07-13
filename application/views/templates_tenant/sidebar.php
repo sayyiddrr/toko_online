@@ -42,7 +42,11 @@
                 <i class="fa fa-fw fa-file"></i>
                 <span>Order</span></a>
         </li>
-      
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('tenant/laporan') ?>">
+                <i class="fa fa-fw fa-pie-chart"></i>
+                <span>Report</span></a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

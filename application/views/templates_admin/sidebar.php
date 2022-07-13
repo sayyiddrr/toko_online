@@ -59,6 +59,11 @@
                 <i class="fa fa-fw fa-pie-chart"></i>
                 <span>Report</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/metode') ?>">
+                <i class="fa fa-fw fa-edit"></i>
+                <span>Metode</span></a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
