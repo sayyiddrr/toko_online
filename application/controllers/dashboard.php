@@ -91,7 +91,8 @@ class dashboard extends CI_Controller{
     }
 
     public function myaccount(){
-        $this->load->view('user/myaccount');
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('user/myaccount', $data);
     }
 
     public function invoice(){

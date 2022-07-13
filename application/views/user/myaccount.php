@@ -31,9 +31,6 @@
                     <div class="list-group list-group-flush">
                         <a href="<?php echo base_url('dashboard/myaccount') ?>" class="list-group-item list-group-item-action active">My Account</a>
                     </div>
-                    <div class="list-group list-group-flush">
-                        <a href="<?php echo base_url('dashboard/invoice') ?>" class="list-group-item list-group-item-action">Invoice</a>
-                    </div>
                 </div>
                 <!-- /#sidebar-wrapper -->
 
@@ -54,13 +51,13 @@
                                     <a class="nav-link" href="indextoko.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <?php if ($this->session->userdata('username')) { ?>
                                             <i style="color:#f9b234;" class="fas fa-user-alt fa-2x"></i>
-                                            &ensp;Selamat Datang
+                                            &ensp;Customer
                                         <?php } ?>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item"><?php echo $this->session->userdata('username') ?></a>
                                     <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?php echo base_url('dashboard') ?>">Lanjukan Belanja</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('categories') ?>">Lanjukan Belanja</a>
                                     <div class="dropdown-divider"></div>    
                                         <a class="dropdown-item" href="<?php echo base_url('auth/logout') ?>">Logout</a>
                                     </div>
@@ -87,43 +84,37 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="name">Nama</label>
-                                                                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="nama" value="<?php echo $this->session->userdata('nama') ?>" />
+                                                                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="nama" value="<?php echo $customer['nama']?>" />
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="username">Username</label>
-                                                                <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" value="<?php echo $this->session->userdata('username') ?>" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="jenis_kelamin">Jenis Kelamin</label>
-                                                                <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" value="<?php echo $this->session->userdata('jenis_kelamin') ?>" />
+                                                                <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" value="<?php echo $customer['username'] ?>" />
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label for="email">Email</label>
-                                                                <input type="email" class="form-control" id="email" name="email" value="<?php echo $this->session->userdata('email') ?>" />
+                                                                <input type="email" class="form-control" id="email" name="email" value="<?php echo $customer['email']?>" />
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label for="no_hp">No. Handphone</label>
-                                                                <input type="text" class="form-control" id="no_hp" name="no_hp" value="<?php echo $this->session->userdata('no_hp') ?>" />
+                                                                <input type="text" class="form-control" id="telepon" name="no_hp" value="<?php echo $customer['telepon']?>" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="no_hp">Password</label>
+                                                                <input type="text" class="form-control" id="no_hp" name="password" value="<?php echo $customer['password']?>" />
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="alamat">Alamat</label>
-                                                                <input type="text" class="form-control" id="alamat" aria-describedby="emailHelp" name="alamat" value="<?php echo $this->session->userdata('alamat') ?>" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="alamat_2">Alamat 2 (Jika Ada)</label>
-                                                                <input type="text" class="form-control" id="alamat_2" aria-describedby="emailHelp" name="alamat_2" value="" />
+                                                                <input type="text" class="form-control" id="alamat" aria-describedby="emailHelp" name="alamat" value="<?php echo $customer['alamat']?>" />
                                                             </div>
                                                         </div>
                                                     </div>
