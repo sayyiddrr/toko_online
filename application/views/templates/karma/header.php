@@ -64,8 +64,8 @@
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Award</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="">Best Tenant</a></li>
-									<li class="nav-item"><a class="nav-link" href="">Best Member</a></li>
+									<li class="nav-item"><a class="nav-link" href="<?php echo base_url('dashboard/best_tenant') ?>">Best Tenant</a></li>
+									<li class="nav-item"><a class="nav-link" href="<?php echo base_url('dashboard/best_member') ?>">Best Member</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">

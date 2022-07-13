@@ -98,5 +98,29 @@ class dashboard extends CI_Controller{
         $this->load->view('user/dashboard_invoice');
         
     }
+    public function best_member(){
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $data['member'] = $this->db->query("SELECT tb_customer.*, COUNT(tb_order.custID) as jumlah
+                                            FROM tb_order, tb_customer
+                                            WHERE tb_customer.custID = tb_order.custID
+                                            GROUP BY tb_order.custID
+                                            ORDER BY jumlah DESC
+                                            LIMIT 1")->result();
+        $this->load->view('templates/karma/header', $data);
+        $this->load->view('best_member', $data);
+        $this->load->view('templates/karma/footer');
+    }
 
+    public function best_tenant(){
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $data['seller'] = $this->db->query("SELECT tb_customer.*, COUNT(tb_order.custID) as jumlah
+                                            FROM tb_order, tb_customer
+                                            WHERE tb_customer.custID = tb_order.custID
+                                            GROUP BY tb_order.custID
+                                            ORDER BY jumlah DESC
+                                            LIMIT 1")->result();
+        $this->load->view('templates/karma/header', $data);
+        $this->load->view('best_member', $data);
+        $this->load->view('templates/karma/footer');
+    }
 }
