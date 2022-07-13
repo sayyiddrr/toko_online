@@ -22,32 +22,29 @@
                     <h3>Shipping Address</h3>
                     <form class="row contact_form" action="<?php echo base_url('dashboard/proses_pesanan') ?>" method="post" novalidate="novalidate">
                         <div class="col-md-12 form-group p_star">
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Full Name">
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Penerima">
                         </div>
                         <div class="col-md-12 form-group">
-                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Address">
+                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat Penerima">
                         </div>
-                        <div class="col-md-6 form-group">
-                            <input type="text" class="form-control" id="no_telp" name="no_telp" placeholder="Phone Number">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Email Address">
+                        <div class="col-md-12 form-group">
+                            <input type="text" class="form-control" id="kontak" name="kontak" placeholder="Telepon">
                         </div>
                         <div class="col-md-12 form-group p_star">
-                            <select class="country_select">
-                                <option value="1">JNE</option>
-                                <option value="2">JNT</option>
-                                <option value="3">POS</option>
-                                <option value="3">TIKI</option>
+                            <select class="country_select" name="metode_pengiriman" id="metode_pengiriman">
+                                <option value="JNE">JNE</option>
+                                <option value="JNT">JNT</option>
+                                <option value="POS">POS</option>
+                                <option value="TIKI">TIKI</option>
                             </select>
                         </div>
                         <div class="col-md-12 form-group p_star">
-                            <select class="country_select">
-                                <option value="1">BCA</option>
-                                <option value="2">BNI</option>
-                                <option value="4">BRI</option>
-                                <option value="4">Mandiri</option>
-                                <option value="4">SazanPay</option>
+                            <select class="country_select" name="metode_pembayaran" id="metode_pembayaran">
+                                <option value="BCA">BCA</option>
+                                <option value="BNI">BNI</option>
+                                <option value="BRI">BRI</option>
+                                <option value="MANDIRI">Mandiri</option>
+                                <option value="SazanPay">SazanPay</option>
                             </select>
                         </div>
                         <div class="col-md-12 form-group">

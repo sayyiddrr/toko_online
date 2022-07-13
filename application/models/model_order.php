@@ -7,11 +7,17 @@ class Model_order extends CI_Model{
         $custID     = $data['customer']['custID'];
         $nama       = $this->input->post('nama');
         $alamat     = $this->input->post('alamat');
+        $kontak     = $this->input->post('kontak');
+        $metode_pembayaran  = $this->input->post('metode_pembayaran');
+        $metode_pengiriman  = $this->input->post('metode_pengiriman');
         $invoice    = array(
             'custID'            => $custID,
             'nama_penerima'          => $nama,
             'alamat_penerima'        => $alamat,
-            'tgl_order'     => date('Y-m-d'),
+            'kontak_penerima'        => $kontak,
+            'tgl_order'         => date('Y-m-d'),
+            'metode_pembayaran' => $metode_pembayaran,
+            'metode_pengiriman' => $metode_pengiriman,
             
         );
         $this->db->insert('tb_order', $invoice);
