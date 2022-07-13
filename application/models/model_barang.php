@@ -3,7 +3,12 @@
 class Model_barang extends CI_Model{
 
     public function tampil_data(){
-        return $this->db->get('tb_barang');
+        return $this->db->get('tb_produk');
+    }
+
+    public function tampil_produk_tenant($id){
+        $query = "SELECT tb_produk.* FROM tb_produk, tb_tenant WHERE tb_produk.tenantID = tb_tenant.tenantID AND tb_produk.tenantID = $id";
+        return $this->db->query($query);      
     }
 
     public function tambah_barang($data,$table){
@@ -25,7 +30,7 @@ class Model_barang extends CI_Model{
     }
 
     public function detail_data($id){
-        $result = $this->db->where('id_brg',$id_brg)->get('tb_barang');
+        $result = $this->db->where('produkID',$produkID)->get('tb_produk');
         if($result->num_rows() > 0){
             return $result->result();
         }else {
@@ -35,9 +40,9 @@ class Model_barang extends CI_Model{
     
 
     public function find($id){
-        $result = $this->db->where('id_brg', $id)
+        $result = $this->db->where('produkID', $id)
                            ->limit(1)
-                           ->get('tb_barang');
+                           ->get('tb_produk');
         if($result->num_rows()>0){
             return $result->row();
 
@@ -46,9 +51,9 @@ class Model_barang extends CI_Model{
         }
     }
 
-    public function detail_brg($id_brg)
+    public function detail_brg($produkID)
     {
-        $result = $this->db->where('id_brg',$id_brg)->get('tb_barang');
+        $result = $this->db->where('produkID',$produkID)->get('tb_produk');
         if($result->num_rows() > 0){
             return $result->result();
         }else {

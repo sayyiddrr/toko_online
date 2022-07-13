@@ -176,23 +176,23 @@
 					</div>
 				</div>
 				<div class="row">
-                    <?php foreach ($barang as $brg) : ?>
+                    <?php foreach ($produk as $brg) : ?>
 					<!-- single product -->
                         <div class="col-lg-3 col-md-6">
                             <div class="single-product">
                                 <img class="img-fluid" src="<?php echo base_url().'/uploads/'.$brg->gambar ?>" alt="">
                                 <div class="product-details">
-                                    <h6><?php echo $brg->nama_brg ?></h6>
+                                    <h6><?php echo $brg->nama_produk ?></h6>
                                     <div class="price">
-                                        <h6>Rp. <?php echo number_format($brg->harga, 0,',','.') ?></h6>
+                                        <h6>Rp. <?php echo number_format($brg->harga_produk, 0,',','.') ?></h6>
                                     </div>
                                     <div class="prd-bottom">
 
-                                        <a href="<?php echo base_url('dashboard/tambah_ke_keranjang/'.$brg->id_brg )?>" class="social-info">
+                                        <a href="<?php echo base_url('dashboard/tambah_ke_keranjang/'.$brg->produkID )?>" class="social-info">
                                             <span class="ti-bag"></span>
                                             <p class="hover-text">add to bag</p>
                                         </a>
-                                        <a href="<?php echo base_url('dashboard/detail/'.$brg->id_brg) ?>" class="social-info">
+                                        <a href="<?php echo base_url('dashboard/detail/'.$brg->produkID) ?>" class="social-info">
 											<span class="lnr lnr-move"></span>
 											<p class="hover-text">detail</p>
 										</a>

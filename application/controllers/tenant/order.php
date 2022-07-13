@@ -1,7 +1,7 @@
 <?php
 
-class Dashboard_tenant extends CI_Controller{
-    
+class Order extends CI_Controller{
+
     public function __construct(){
         parent::__construct();
 
@@ -14,12 +14,12 @@ class Dashboard_tenant extends CI_Controller{
             redirect('auth/login');
         }
     }
-    public function index()
-    {
+    public function index(){
         $data['tenant'] = $this->db->get_where('tb_tenant', ['email' => $this->session->userdata('email')])->row_array();
-        $this->load->view('templates_tenant/header', $data);
-        $this->load->view('templates_tenant/sidebar', $data);
-        $this->load->view('tenant/dashboard', $data);
+        $data['order'] = $this->model_order->tampil_order_tenant($data['tenant']['tenantID'])->result();
+        $this->load->view('templates_tenant/header',$data);
+        $this->load->view('templates_tenant/sidebar',$data);
+        $this->load->view('tenant/order',$data);
         $this->load->view('templates_tenant/footer');
     }
 }

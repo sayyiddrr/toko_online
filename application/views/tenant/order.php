@@ -2,11 +2,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Barang
+        ORDER
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Data Product</li>
+        <li class="active">ORDER</li>
       </ol>
     </section>
 
@@ -14,31 +14,30 @@
       <table class="table table-bordered">
           <tr>
               <th>NOMER</th>
-              <th>NAMA PRODUK</th>
-              <th>DESKRIPSI</th>
-              <th>KATEGORI</th>
+              <th>NAMA BARANG</th>
               <th>HARGA</th>
-              <th>STOK</th>
               <th>DISKON</th>
-              <th colspan="2">ACTION</th>
+              <th>JUMLAH</th>
+              <th colspan="3">ACTION</th>
           </tr>
 
           <?php
           $no=1;
-          foreach($produk as $brg) : ?>
+          foreach($order as $brg) : ?>
 
           <tr>
               <td><?php echo $no++ ?></td>
-              <td><?php echo $brg->nama_produk ?></td>
-              <td><?php echo $brg->deskripsi ?></td>
-              <td><?php echo $brg->kategoriID ?></td>
-              <td><?php echo $brg->harga_produk ?></td>
-              <td><?php echo $brg->stok ?></td>
+              <td><?php echo $brg->produkID ?></td>
+              <td><?php echo $brg->harga ?></td>
               <td><?php echo $brg->diskon ?></td>
+              <td><?php echo $brg->kuantitas ?></td>
               <td><?php echo anchor('admin/data_barang/detail/'.$brg->produkID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div') ?></td>
+              <td><?php echo anchor('admin/data_barang/edit/'.$brg->produkID, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
               <td><?php echo anchor('admin/data_barang/hapus/'.$brg->produkID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
           </tr>
           <?php endforeach; ?>
+
       </table>
     </section>
+    
 </div>

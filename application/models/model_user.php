@@ -2,8 +2,12 @@
 
 class Model_user extends CI_Model{
 
-    public function tampil_user(){
-        return $this->db->get('tb_user');
+    public function tampil_tenant(){
+        return $this->db->get('tb_tenant');
+    }
+
+    public function tampil_customer(){
+        return $this->db->get('tb_customer');
     }
 
     public function tambah_user($datauser,$table){

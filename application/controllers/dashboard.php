@@ -5,7 +5,7 @@ class dashboard extends CI_Controller{
     public function __construct(){
         parent::__construct();
 
-        if($this->session->userdata('role_id') != '3'){
+        if($this->session->userdata('roleID') != '3'){
             $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             Anda Belum Login!
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="ture">&times;</span>
@@ -21,10 +21,11 @@ class dashboard extends CI_Controller{
 
         $barang = $this->model_barang->find($id);
         $data = array(
-            'id'      => $barang->id_brg,
+            'id'      => $barang->produkID,
             'qty'     => 1,
-            'price'   => $barang->harga,
-            'name'    => $barang->nama_brg,
+            'price'   => $barang->harga_produk,
+            'name'    => $barang->nama_produk,
+            'diskon'    => $barang->diskon,
             
         );
     
@@ -33,7 +34,8 @@ class dashboard extends CI_Controller{
     }
 
     public function detail_keranjang(){
-        $this->load->view('templates/karma/header');
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
         $this->load->view('keranjang');
         $this->load->view('templates/karma/footer');
     }
@@ -44,16 +46,19 @@ class dashboard extends CI_Controller{
     }
 
     public function pembayaran(){
-        $this->load->view('templates/karma/header');
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
         $this->load->view('pembayaran');
         $this->load->view('templates/karma/footer');
 
     }
     public function proses_pesanan(){
-        $is_processed = $this->model_invoice->index();
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $is_processed = $this->model_order->index();
         if($is_processed){
             $this->cart->destroy();
-            $this->load->view('templates/karma/header');
+            $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+            $this->load->view('templates/karma/header', $data);
             $this->load->view('proses_pesanan');
             $this->load->view('templates/karma/footer');
         } else{
@@ -64,19 +69,22 @@ class dashboard extends CI_Controller{
     public function detail($id_brg)
     {
         $data['barang'] = $this->model_barang->detail_brg($id_brg);
-        $this->load->view('templates/karma/header');
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
         $this->load->view('detail_barang',$data);
         $this->load->view('templates/karma/footer');
     }
 
     public function official_store(){
-        $this->load->view('templates/karma/header');
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
         $this->load->view('official_store');
         $this->load->view('templates/karma/footer');
     }
 
     public function discount(){
-        $this->load->view('templates/karma/header');
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
         $this->load->view('discount');
         $this->load->view('templates/karma/footer');
     }

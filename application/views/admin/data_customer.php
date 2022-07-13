@@ -2,41 +2,44 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data User
+        Data Customer
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Data User</li>
+        <li class="active">Data Customer</li>
       </ol>
     </section>
 
     <section class="content">
-      <button class="btn btn-sm btn-primary mb-3" data-toggle="modal" data-target="#tambah_user"><i class="fa fa-plus fa-sm"></i>  Tambah User</button>
+      <button class="btn btn-sm btn-primary mb-3" data-toggle="modal" data-target="#tambah_user"><i class="fa fa-plus fa-sm"></i>  Tambah Customer</button>
       <table class="table table-bordered">
           <tr>
               <th>NOMOR</th>
-              <th>NAMA PENGGUNA</th>
+              <th>CUSTOMER ID</th>
+              <th>NAMA</th>
               <th>E-MAIL</th>
+              <th>ALAMAT</th>
+              <th>KONTAK</th>
               <th>USERNAME</th>
               <th>PASSWORD</th>
-              <th>ROLE-ID</th>
-              <th colspan="3">ACTION</th>
+              <th colspan="2">ACTION</th>
           </tr>
 
           <?php
           $no=1;
-          foreach($user as $usr) : ?>
+          foreach($customer as $usr) : ?>
 
           <tr>
               <td><?php echo $no++ ?></td>
-              <td><?php echo $usr->nama_usr ?></td>
+              <td><?php echo $usr->custID ?></td>
+              <td><?php echo $usr->nama ?></td>
               <td><?php echo $usr->email ?></td>
+              <td><?php echo $usr->alamat ?></td>
+              <td><?php echo $usr->telepon ?></td>
               <td><?php echo $usr->username ?></td>
               <td><?php echo $usr->password ?></td>
-              <td><?php echo $usr->role_id ?></td>
-              <td><?php echo anchor('admin/data_user/detail/'.$usr->id_usr, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div') ?></td>
-              <td><?php echo anchor('admin/data_user/edit/'.$usr->id_usr, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
-              <td><?php echo anchor('admin/data_user/hapus/'.$usr->id_usr, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
+              <td><?php echo anchor('admin/data_user/editcustomer/'.$usr->custID, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
+              <td><?php echo anchor('admin/data_user/hapuscustomer/'.$usr->custID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
           </tr>
           <?php endforeach; ?>
 

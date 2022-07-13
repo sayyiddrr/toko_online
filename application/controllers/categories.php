@@ -3,8 +3,9 @@
 class Categories extends CI_Controller{
     public function index()
     {
-        $data['barang']=$this->model_barang->tampil_data()->result();
-        $this->load->view('templates/karma/header');
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $data['produk']=$this->model_barang->tampil_data()->result();
+        $this->load->view('templates/karma/header', $data);
 		$this->load->view('categories', $data);
         $this->load->view('templates/karma/footer');
     }
@@ -13,10 +14,11 @@ class Categories extends CI_Controller{
 
         $barang = $this->model_barang->find($id);
         $data = array(
-            'id'      => $barang->id_brg,
+            'id'      => $barang->produkID,
             'qty'     => 1,
-            'price'   => $barang->harga,
-            'name'    => $barang->nama_brg,
+            'price'   => $barang->harga_produk,
+            'name'    => $barang->nama_produk,
+            'diskon'    => $barang->diskon,
             
         );
     
@@ -25,7 +27,8 @@ class Categories extends CI_Controller{
     }
 
     public function detail_keranjang(){
-        $this->load->view('templates/karma/header');
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
         $this->load->view('keranjang');
         $this->load->view('templates/karma/footer');
     }
@@ -34,7 +37,8 @@ class Categories extends CI_Controller{
     {
         $data['elektronik'] = $this->model_kategori->
             data_elektronik()->result();
-        $this->load->view('templates/karma/header');
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
         $this->load->view('elektronik',$data);
         $this->load->view('templates/karma/footer');
     }
@@ -43,7 +47,8 @@ class Categories extends CI_Controller{
     {
         $data['pakaian_pria'] = $this->model_kategori->
             data_pakaian_pria()->result();
-        $this->load->view('templates/karma/header');
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
         $this->load->view('pakaian_pria',$data);
         $this->load->view('templates/karma/footer');
     }
@@ -52,7 +57,8 @@ class Categories extends CI_Controller{
     {
         $data['pakaian_wanita'] = $this->model_kategori->
             data_pakaian_wanita()->result();
-        $this->load->view('templates/karma/header');
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
         $this->load->view('pakaian_wanita',$data);
         $this->load->view('templates/karma/footer');
     }
@@ -61,7 +67,8 @@ class Categories extends CI_Controller{
     {
         $data['pakaian_anak_anak'] = $this->model_kategori->
             data_pakaian_anak_anak()->result();
-        $this->load->view('templates/karma/header');
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
         $this->load->view('pakaian_anak_anak',$data);
         $this->load->view('templates/karma/footer');
     }
@@ -70,10 +77,10 @@ class Categories extends CI_Controller{
     {
         $data['peralatan_olahraga'] = $this->model_kategori->
             data_peralatan_olahraga()->result();
-        $this->load->view('templates/karma/header');
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
         $this->load->view('peralatan_olahraga',$data);
         $this->load->view('templates/karma/footer');
     }
 
 }
-?>

@@ -42,17 +42,17 @@
                     <div class="hover">
                         <h4>Welcome Shopper</h4>
                         <p>Selamat datang di marketplace yang sangat anggun menawan dan futuristik</p>
-                        <p>Buat akun di SAZAN Shop dan dapatkan promo promo menarik!</p>
+                        <p>Jadi partner di marketplace SAZAN Shop dan dapatkan keuntungan lebih banyak!</p>
                         <br>
-                        <p>Sudah punya akun?</p>
-                        <a class="primary-btn" href="<?php echo base_url('auth/login') ?>">Login</a>
+                        <p>Sudah punya akun tenant?</p>
+                        <a class="primary-btn" href="<?php echo base_url('auth/login_tenant') ?>">Login as Tenant</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="login_form_inner">
                     <h3>Sign Up</h3>
-                    <form class="row login_form" action="<?php echo base_url('registrasi/index') ?>" method="post" id="contactForm" novalidate="novalidate">
+                    <form class="row login_form" action="<?php echo base_url('registrasi/registtenant') ?>" method="post" id="contactForm" novalidate="novalidate">
                         <div class="col-md-12 form-group">
                             <input type="text" class="form-control" id="nama" name="nama" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'">
                             <?php echo form_error('nama', '<div class="text-danger small ml-2">','</div>') ?>
@@ -62,17 +62,13 @@
                             <?php echo form_error('email', '<div class="text-danger small ml-2">','</div>') ?>
                         </div>
                         <div class="col-md-12 form-group">
-                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'">
+                            <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Description" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description'">
                             <?php echo form_error('email', '<div class="text-danger small ml-2">','</div>') ?>
                         </div>
                         <div class="col-md-12 form-group">
-                            <input type="text" class="form-control" id="telepon" name="telepon" placeholder="Contact" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Contact'">
+                            <input type="text" class="form-control" id="kontak" name="kontak" placeholder="Contact" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Contact'">
                             <?php echo form_error('email', '<div class="text-danger small ml-2">','</div>') ?>
                         </div>
-                        <div class="col-md-12 form-group">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
-                            <?php echo form_error('username', '<div class="text-danger small ml-2">','</div>') ?>
-                        </div>        
                         <div class="col-md-12 form-group row">
                             <div class="col-md-6">
                                 <input type="password" value="" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password_1">

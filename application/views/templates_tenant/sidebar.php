@@ -9,7 +9,7 @@
           <img src="<?php echo base_url() ?>assets/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>nama tenant</p>
+          <p><?php echo $tenant['nama_tenant']?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -35,12 +35,12 @@
         <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('tenant/data_barang') ?>">
                 <i class="fa fa-fw fa-database"></i>
-                <span>Data Barang</span></a>
+                <span>Data Produk</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('tenant/invoice') ?>">
+            <a class="nav-link" href="<?php echo base_url('tenant/order') ?>">
                 <i class="fa fa-fw fa-file"></i>
-                <span>Invoice</span></a>
+                <span>Order</span></a>
         </li>
       
       </ul>

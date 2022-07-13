@@ -40,14 +40,10 @@
                 <div class="login_box_img">
                     <img class="img-fluid" src="<?php echo base_url() ?>assets/karma/img/login.jpg" alt="">
                     <div class="hover">
-                        <h4>Welcome!</h4>
+                        <h4>Welcome Shopper</h4>
                         <p>Selamat datang di marketplace yang sangat anggun menawan dan futuristik</p>
-                        <p>Be our Customer!</p>
+                        <p>kalo belum punya akun klik yg bawah ini aja</p>
                         <a class="primary-btn" href="<?php echo base_url('registrasi'); ?>">Create an Account</a>
-                        <br>
-                        <br>
-                        <p>Be our Partner!</p>
-                        <a class="primary-btn" href="<?php echo base_url('registrasi/registtenant'); ?>">Become a Seller</a>
                     </div>
                 </div>
             </div>
@@ -55,10 +51,10 @@
                 <div class="login_form_inner">
                     <h3>Log in to enter</h3>
                     <?php echo $this->session->flashdata('pesan') ?>
-                    <form class="row login_form" action="<?php echo base_url('auth/login')?>" method="post" id="contactForm" novalidate="novalidate">
+                    <form class="row login_form" action="<?php echo base_url('auth/login_admin')?>" method="post" id="contactForm" novalidate="novalidate">
                         <div class="col-md-12 form-group">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
-                            <?php echo form_error('username', '<div class="text-danger small ml-2">','</div>') ?>
+                            <input type="text" class="form-control" id="adminID" name="adminID" placeholder="ID" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ID'">
+                            <?php echo form_error('Email', '<div class="text-danger small ml-2">','</div>') ?>
                         </div>
                         <div class="col-md-12 form-group">
                             <input type="password" value="" class="form-control form-control-user" id="exampleInputPassword" placeholder="Masukkan Password Anda" name="password">
@@ -84,12 +80,7 @@
                         
                         <div class="col-md-12 form-group">
                             <button type="submit" value="submit" class="primary-btn">Log In</button>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <a href="<?php echo base_url('auth/login_tenant')?>">Tenant Login Here</a>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <a href="<?php echo base_url('auth/login_admin')?>">Admin Login Here</a>
+                            <a href="#">Forgot Password?</a>
                         </div>
                     </form>
                 </div>

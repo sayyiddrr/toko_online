@@ -26,19 +26,19 @@
 					</li>
 
 					<li class="main-nav-list">
-						<a href="<?php echo base_url('categories/pakaian_pria') ?>" aria-expanded="false" aria-controls="pakaianpria">Pakaian Pria</a>
+						<a href="<?php echo base_url('categories/pakaian_pria') ?>" aria-expanded="false" aria-controls="pakaianpria">Fashion Pria</a>
 					</li>
 
 					<li class="main-nav-list">
-						<a href="<?php echo base_url('categories/pakaian_wanita') ?>" aria-expanded="false" aria-controls="pakaianwanita">Pakaian Wanita</a>
+						<a href="<?php echo base_url('categories/pakaian_wanita') ?>" aria-expanded="false" aria-controls="pakaianwanita">Fashion Wanita</a>
 					</li>
 
 					<li class="main-nav-list">
-						<a href="<?php echo base_url('categories/pakaian_anak_anak') ?>" aria-expanded="false" aria-controls="pakaiananakanak">Pakaian Anak-Anak</a>
+						<a href="<?php echo base_url('categories/pakaian_anak_anak') ?>" aria-expanded="false" aria-controls="pakaiananakanak">Fashion Anak</a>
 					</li>
 
 					<li class="main-nav-list">
-						<a href="<?php echo base_url('categories/peralatan_olahraga') ?>" aria-expanded="false" aria-controls="peralatanolahraga">Peralatan Olahraga</a>
+						<a href="<?php echo base_url('categories/peralatan_olahraga') ?>" aria-expanded="false" aria-controls="peralatanolahraga">Sport</a>
 					</li>
 
 				</ul>
@@ -110,13 +110,13 @@
 							<div class="single-product">
 								<img class="img-fluid" src="<?php echo base_url().'/uploads/'.$brg->gambar ?>" alt="">
 								<div class="product-details">
-									<h6><?php echo $brg->nama_brg ?></h6>
+									<h6><?php echo $brg->nama_produk ?></h6>
 									<div class="price">
-										<h6>Rp. <?php echo number_format($brg->harga, 0,',','.') ?></h6>
+										<h6>Rp. <?php echo number_format($brg->harga_produk, 0,',','.') ?></h6>
 									</div>
 									<div class="prd-bottom">
 
-										<a href="<?php echo base_url('categories/tambah_ke_keranjang/'.$brg->id_brg )?>" class="social-info">
+										<a href="<?php echo base_url('categories/tambah_ke_keranjang/'.$brg->produkID )?>" class="social-info">
 											<span class="ti-bag"></span>
 											<p class="hover-text">add to bag</p>
 										</a>

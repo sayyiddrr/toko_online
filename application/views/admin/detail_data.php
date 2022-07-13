@@ -16,7 +16,7 @@
             <div class="card-header">Detail Produk</div>
             <div class="card-body">
         
-                <?php foreach($barang as $brg):?>
+                <?php foreach($produk as $brg):?>
                     <div class="row">
                         <div class="col-md-4">  
                             <img src="<?php echo base_url().'/uploads/'.$brg->gambar ?>" class="img-thumbnail">
@@ -25,31 +25,38 @@
                             <table class="table">
                                 <tr>
                                     <td>Nama Produk</td>
-                                    <td><strong><?php echo $brg->nama_brg?></strong></td>
+                                    <td><strong><?php echo $brg->nama_produk?></strong></td>
                                 </tr>
 
                                 <tr>
-                                    <td>Keterangan</td>
-                                    <td><strong><?php echo $brg->keterangan?></strong></td>
+                                    <td>Deskripsi</td>
+                                    <td><strong><?php echo $brg->deskripsi?></strong></td>
                                 </tr>
 
                                 <tr>
                                     <td>Kategori</td>
-                                    <td><strong><?php echo $brg->kategori?></strong></td>
+                                    <td><strong><?php echo $brg->kategoriID?></strong></td>
                                 </tr>
 
                                 <tr>
                                     <td>Stok</td>
                                     <td><strong><?php echo $brg->stok?></strong></td>
                                 </tr>
+                                <tr>
+                                    <td>Diskon</td>
+                                    <td><strong><?php echo $brg->diskon?>%</strong></td>
+                                </tr>
 
                                 <tr>
-                                    <td>Harga</td>
-                                    <td><strong><div class="btn btn-sm btn-success">Rp. <?php echo number_format($brg->harga,0,',','.')?></div>  </strong></td>
+                                    <td>harga_produk</td>
+                                    <td><strong><div class="btn btn-sm btn-success">Rp. <?php echo number_format($brg->harga_produk,0,',','.')?></div>  </strong></td>
                                 </tr>
+                                <tr>
+                                    <td>Discounted</td>
+                                    <td><strong><div class="btn btn-sm btn-primary">Rp. <?php echo number_format($brg->harga_produk-($brg->harga_produk*$brg->diskon/100),0,',','.') ?></div>  </strong></td>
+                                </tr>
+                                
                             </table>
-
-                            <?php echo anchor('admin/data_barang/edit/'.$brg->id_brg,'<div class="btn btn-sm btn-primary">Edit</div>') ?>
 
                             <?php echo anchor('admin/data_barang/','<div class="btn btn-sm btn-success">Back</div>') ?>
                             <?php echo anchor('admin/data_barang/hapus/','<div class="btn btn-sm btn-danger">Delete</div>') ?>

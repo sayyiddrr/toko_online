@@ -20,7 +20,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
     {
-        $data['barang']=$this->model_barang->tampil_data()->result();
+		$data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $data['produk']=$this->model_barang->tampil_data()->result();
         $this->load->view('templates/karma/header');
 		$this->load->view('dashboard', $data);
         $this->load->view('templates/karma/footer');

@@ -9,7 +9,7 @@
           <img src="<?php echo base_url() ?>assets/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>nama tenant</p>
+          <p><?php echo $admin['nama_admin']?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -35,19 +35,25 @@
         <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('admin/data_barang') ?>">
                 <i class="fa fa-fw fa-database"></i>
-                <span>Data Barang</span></a>
+                <span>Data Produk</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/invoice') ?>">
+            <a class="nav-link" href="<?php echo base_url('admin/order') ?>">
                 <i class="fa fa-fw fa-file"></i>
-                <span>Invoice</span></a>
+                <span>Data Order</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/data_user') ?>">
-                <i class="fa fa-fw fa-user"></i>
-                <span>Data User</span></a>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-fw fa-user"></i> <span>Data User</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url('admin/data_user/tenant') ?>"><i class="fa fa-circle-o"></i> Data Tenant</a></li>
+            <li class="active"><a href="<?php echo base_url('admin/data_user/customer') ?>"><i class="fa fa-circle-o"></i> Data Customer</a></li>
+          </ul>
         </li>
-      
       </ul>
     </section>
     <!-- /.sidebar -->
