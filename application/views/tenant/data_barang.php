@@ -70,9 +70,9 @@
                   <label>Kategori</label>
                   <select class="form-control" name="kategoriID">
                   <option value='1'>Elektronik</option>
-                  <option value='2'>Pakaian Pria</option>
-                  <option value='3'>Pakaian Wanita</option>
-                  <option value='4'>Pakaian Anak Anak</option>
+                  <option value='2'>Fashion Pria</option>
+                  <option value='3'>Fashion Wanita</option>
+                  <option value='4'>Fashion Anak Anak</option>
                   <option value='5'>Peralatan Olahraga</option>
                   </select>
               </div>
