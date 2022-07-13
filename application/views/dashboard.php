@@ -8,9 +8,8 @@
 						<div class="row single-slide align-items-center d-flex">
 							<div class="col-lg-5 col-md-6">
 								<div class="banner-content">
-									<h1>Nike New <br>Collection!</h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+									<h2>Selamat Datang di SAZAN <br>kepuasan anda prioritas kami!</h2>
+									<p>SAZAN ini menyediakan berbagai macam produk kebutuhan anda. Nikmati kemudahan berbelanja di SAZAN, Enjoy Your Shoping</p>
 									
 								</div>
 							</div>
