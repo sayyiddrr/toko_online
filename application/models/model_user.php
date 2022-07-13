@@ -10,7 +10,11 @@ class Model_user extends CI_Model{
         return $this->db->get('tb_customer');
     }
 
-    public function tambah_user($datauser,$table){
+    public function tambah_customer($datauser,$table){
+        $this->db->insert($table,$datauser);
+    }
+
+    public function tambah_tenant($datauser,$table){
         $this->db->insert($table,$datauser);
     }
 

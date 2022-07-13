@@ -55,32 +55,30 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url().'admin/data_user/tambah_aksi';?>" method="post" enctype="multipart/form-data">
+          <form action="<?php echo base_url().'admin/data_user/tambah_tenant';?>" method="post" enctype="multipart/form-data">
               
               <div class="form-group">
-                  <label>Nama Pengguna</label>
-                  <input type="text" name="nama_brg" class="form-control">
+                  <label>Nama Tenant</label>
+                  <input type="text" name="nama_tenant" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label>Deskripsi Toko</label>
+                  <input type="text" name="deskripsi_tenant" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label>Kontak</label>
+                  <input type="text" name="kontak_tenant" class="form-control">
               </div>
               <div class="form-group">
                   <label>E-Mail</label>
                   <input type="text" name="email" class="form-control">
               </div>
-              <div class="form-group">
-                  <label>Username</label>
-                  <input type="text" name="username" class="form-control">
-              </div>
+              
               <div class="form-group">
                   <label>Password</label>
                   <input type="text" name="password" class="form-control">
               </div>
-              <div class="form-group">
-                  <label>Role_Id</label>
-                  <select class="form-control" name="role_id">
-                  <option>1 For Admin Marketplace</option>
-                  <option>2 For Seller</option>
-                  <option>3 For Customer</option>
-                  </select>
-              </div>
+              
           
           
         </div>

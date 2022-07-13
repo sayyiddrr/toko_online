@@ -56,7 +56,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url().'tenant/data_barang/tambah_aksi';?>" method="post" enctype="multipart/form-data">
+          <form action="<?php echo base_url().'tenant/data_barang/tambah_customer';?>" method="post" enctype="multipart/form-data">
               
               <div class="form-group">
                   <label>Nama Barang</label>

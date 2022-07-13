@@ -21,24 +21,48 @@ class Data_user extends CI_Controller{
         $this->load->view('admin/data_customer', $datauser);
         $this->load->view('templates_admin/footer');
     }
-    public function tambah_aksi()
+    public function tambah_customer()
     {
-        $nama_usr   = $this->input->post('nama_usr');
+        $nama   = $this->input->post('nama');
         $email      = $this->input->post('email');
+        $alamat      = $this->input->post('alamat');
+        $telepon      = $this->input->post('telepon');
         $username   = $this->input->post('username');
         $password   = $this->input->post('password');
-        $role_id    = $this->input->post('role_id');
 
         $datauser = array(
-            'nama_usr'       => $nama_usr,
+            'roleID'       => 3,
+            'nama'       => $nama,
             'email'          => $email,
+            'alamat'          => $alamat,
+            'telepon'          => $telepon,
             'username'       => $username,
-            'password'       => $password,
-            'role_id'        => $role_id
+            'password'       => $password
         );
 
-        $this->model_user->tambah_user($datauser, 'tb_user');
-        redirect('admin/data_user/index');
+        $this->model_user->tambah_customer($datauser, 'tb_customer');
+        redirect('admin/data_user/customer');
+    }
+
+    public function tambah_tenant()
+    {
+        $nama_tenant   = $this->input->post('nama_tenant');
+        $deskripsi_tenant      = $this->input->post('deskripsi_tenant');
+        $kontak_tenant      = $this->input->post('kontak_tenant');
+        $email      = $this->input->post('email');
+        $password   = $this->input->post('password');
+
+        $datauser = array(
+            'roleID'       => 2,
+            'nama_tenant'       => $nama_tenant,
+            'deskripsi_tenant'       => $deskripsi_tenant,
+            'kontak_tenant'          => $kontak_tenant,
+            'email'          => $email,
+            'password'       => $password
+        );
+
+        $this->model_user->tambah_tenant($datauser, 'tb_tenant');
+        redirect('admin/data_user/tenant');
     }
 
     public function edittenant($id)
