@@ -27,15 +27,16 @@
                 </div>
                 <div class="col-lg-5 offset-lg-1">
                     <div class="s_product_text">
-                        <h3><?php echo $brg->nama_brg?></h3>
-                        <h2>Rp. <?php echo number_format($brg->harga,0,',','.')?></h2>
+                        <h3><?php echo $brg->nama_produk?></h3>
+                        <h2>Rp. <?php echo number_format($brg->harga_produk,0,',','.')?></h2>
                         <ul class="list">
-                            <li><a class="active" href="#"><span>Category</span><?php echo $brg->kategori?></a></li>
-                            <li><a href="#"><span>In Stock</span><?php echo $brg->stok?></a></li>
+                            <li><a><span>Category</span><?php echo $brg->kategoriID?></a></li>
+                            <li><a><span>In Stock</span><?php echo $brg->stok?></a></li>
+                            <li><a class="active" href="#"><span>Brand</span><?php echo $brg->tenantID?></a></li>
                         </ul>
-                        <p><?php echo $brg->keterangan?></p>
+                        <p><?php echo $brg->deskripsi?></p>
                         <div class="card_area d-flex align-items-center">
-                            <a class="primary-btn" href="<?php echo base_url('categories/tambah_ke_keranjang/'.$brg->id_brg )?>">Add to Cart</a>
+                            <a class="primary-btn" href="<?php echo base_url('categories/tambah_ke_keranjang/'.$brg->produkID )?>">Add to Cart</a>
                         </div>
                     </div>
                 </div>

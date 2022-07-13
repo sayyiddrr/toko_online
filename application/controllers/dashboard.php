@@ -32,7 +32,7 @@ class dashboard extends CI_Controller{
         $this->cart->insert($data);
         redirect('welcome');
     }
-
+    
     public function detail_keranjang(){
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('templates/karma/header', $data);
@@ -66,9 +66,9 @@ class dashboard extends CI_Controller{
         }
     }
 
-    public function detail($id_brg)
+    public function detail($produkID)
     {
-        $data['barang'] = $this->model_barang->detail_brg($id_brg);
+        $data['barang'] = $this->model_barang->detail_brg($produkID);
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('templates/karma/header', $data);
         $this->load->view('detail_barang',$data);
@@ -77,8 +77,9 @@ class dashboard extends CI_Controller{
 
     public function official_store(){
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $data['tenant'] = $this->model_user->tampil_tenant()->result();
         $this->load->view('templates/karma/header', $data);
-        $this->load->view('official_store');
+        $this->load->view('official_store', $data);
         $this->load->view('templates/karma/footer');
     }
 

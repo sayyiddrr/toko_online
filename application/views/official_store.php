@@ -18,48 +18,22 @@
 <section class="blog_categorie_area">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-                <div class="categories_post">
-                    <img src="<?php echo base_url() ?>assets/karma/img/blog/cat-post/cat-post-3.jpg" alt="post">
-                    <div class="categories_details">
-                        <div class="categories_text">
-                            <a href="blog-details.html">
-                                <h5>NIKE</h5>
-                            </a>
-                            <div class="border_line"></div>
-                            <p>Enjoy your social life together</p>
+            <?php foreach($tenant as $tnt):?>
+                <div class="col-lg-4">
+                    <div class="categories_post">
+                        <img src="<?php echo base_url() ?>assets/karma/img/blog/cat-post/cat-post-3.jpg" alt="post">
+                        <div class="categories_details">
+                            <div class="categories_text">
+                                <a href="blog-details.html">
+                                    <h5><?php echo $tnt->nama_tenant?></h5>
+                                </a>
+                                <div class="border_line"></div>
+                                <p><?php echo $tnt->deskripsi_tenant?></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="categories_post">
-                    <img src="<?php echo base_url() ?>assets/karma/img/blog/cat-post/cat-post-2.jpg" alt="post">
-                    <div class="categories_details">
-                        <div class="categories_text">
-                            <a href="blog-details.html">
-                                <h5>ADIDAS</h5>
-                            </a>
-                            <div class="border_line"></div>
-                            <p>Be a part of politics</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="categories_post">
-                    <img src="<?php echo base_url() ?>assets/karma/img/blog/cat-post/cat-post-1.jpg" alt="post">
-                    <div class="categories_details">
-                        <div class="categories_text">
-                            <a href="blog-details.html">
-                                <h5>NEW BALANCE</h5>
-                            </a>
-                            <div class="border_line"></div>
-                            <p>Let the food be finished</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>

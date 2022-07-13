@@ -54,6 +54,11 @@
             <li class="active"><a href="<?php echo base_url('admin/data_user/customer') ?>"><i class="fa fa-circle-o"></i> Data Customer</a></li>
           </ul>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/laporan') ?>">
+                <i class="fa fa-fw fa-pie-chart"></i>
+                <span>Report</span></a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
