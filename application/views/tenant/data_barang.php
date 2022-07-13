@@ -73,7 +73,7 @@
                   <option value='2'>Fashion Pria</option>
                   <option value='3'>Fashion Wanita</option>
                   <option value='4'>Fashion Anak Anak</option>
-                  <option value='5'>Peralatan Olahraga</option>
+                  <option value='5'>Sport</option>
                   </select>
               </div>
               <div class="form-group">
