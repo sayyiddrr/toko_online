@@ -22,7 +22,7 @@
             <div class="row s_product_inner">
                 <div class="col-lg-6">
                     <div class="single-prd-item">
-                        <img class="img-fluid" src="<?php echo base_url() ?>assets/aset/img/loginlogo.png" alt="">
+                        <img class="img-fluid" src="<?php echo base_url() ?>assets/aset/img/user.png" alt="">
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
