@@ -57,7 +57,6 @@
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="<?php echo base_url('categories') ?>">Shop Category</a></li>
 									<li class="nav-item"><a class="nav-link" href="<?php echo base_url('dashboard/official_store') ?>">Official Store</a></li>
-									<li class="nav-item"><a class="nav-link" href="<?php echo base_url('dashboard/discount') ?>">Discount</a></li>
 									<li class="nav-item"><a class="nav-link" href="<?php echo base_url('dashboard/pembayaran') ?>">Checkout</a></li>
 								</ul>
 							</li>
