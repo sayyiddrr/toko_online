@@ -21,7 +21,16 @@ class Welcome extends CI_Controller {
 	public function index()
     {
 		$data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
-        $data['produk']=$this->model_barang->tampil_data()->result();
+        $data['produk'] = $this->db->query("SELECT *
+                                            FROM tb_produk
+											ORDER BY produkID DESC
+                                            LIMIT 4")->result();
+		$data['favorite'] = $this->db->query("SELECT tb_produk.*, COUNT(tb_orderdetail.produkID) as jumlah
+                                            FROM tb_produk, tb_orderdetail
+											WHERE tb_produk.produkID = tb_orderdetail.produkID
+											GROUP BY produkID
+											ORDER BY jumlah DESC
+                                            LIMIT 1")->result();
         $this->load->view('templates/karma/header');
 		$this->load->view('dashboard', $data);
         $this->load->view('templates/karma/footer');

@@ -221,7 +221,7 @@
 				<div class="col-lg-6 no-padding exclusive-left">
 					<div class="row clock_sec clockdiv" id="clockdiv">
 						<div class="col-lg-12">
-							<h1>Exclusive Hot Deal Ends Soon!</h1>
+							<h1>MOST FAVORITE PRODUCT ON YOUR RIGHT!</h1>
 							<p>Who are in extremely love with eco friendly system.</p>
 						</div>
 						<div class="col-lg-12">
@@ -245,25 +245,26 @@
 							</div>
 						</div>
 					</div>
-					<a href="" class="primary-btn">Shop Now</a>
+					<a href="<?php echo base_url('categories') ?>" class="primary-btn">Shop Now</a>
 				</div>
 				<div class="col-lg-6 no-padding exclusive-right">
 					<div class="active-exclusive-product-slider">
 						<!-- single exclusive carousel -->
 						<div class="single-exclusive-slider">
-							<img class="img-fluid" src="<?php echo base_url() ?>assets/karma/img/product/e-p1.png" alt="">
-							<div class="product-details">
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
+							<?php foreach ($favorite as $fav) : ?>
+								<img class="img-fluid" src="<?php echo base_url().'/uploads/'.$fav->gambar ?>" alt="">
+								<div class="product-details">
+									<div class="price">
+										<h6>Rp. <?php echo number_format($fav->harga_produk, 0,',','.') ?></h6>
+									</div>
+									<h4><?php echo $fav->nama_produk ?></h4>
+									<div class="add-bag d-flex align-items-center justify-content-center">
+										<a class="add-btn" href="<?php echo base_url('dashboard/tambah_ke_keranjang/'.$fav->produkID )?>"><span class="ti-bag"></span></a>
+										<span class="add-text text-uppercase">Add to Bag</span>
+									</div>
 								</div>
-								<h4>addidas New Hammer sole
-									for Sports person</h4>
-								<div class="add-bag d-flex align-items-center justify-content-center">
-									<a class="add-btn" href=""><span class="ti-bag"></span></a>
-									<span class="add-text text-uppercase">Add to Bag</span>
-								</div>
-							</div>
+							
+							<?php endforeach; ?>
 						</div>
 						<!-- single exclusive carousel -->
 						<div class="single-exclusive-slider">
@@ -288,162 +289,4 @@
 	</section>
 	<!-- End exclusive deal Area -->
 
-	<!-- Start brand Area -->
-	<section class="brand-area section_gap">
-		<div class="container">
-			<div class="row">
-				<a class="col single-img" href="#">
-					<img class="img-fluid d-block mx-auto" src="<?php echo base_url() ?>assets/karma/img/brand/1.png" alt="">
-				</a>
-				<a class="col single-img" href="#">
-					<img class="img-fluid d-block mx-auto" src="<?php echo base_url() ?>assets/karma/img/brand/2.png" alt="">
-				</a>
-				<a class="col single-img" href="#">
-					<img class="img-fluid d-block mx-auto" src="<?php echo base_url() ?>assets/karma/img/brand/3.png" alt="">
-				</a>
-				<a class="col single-img" href="#">
-					<img class="img-fluid d-block mx-auto" src="<?php echo base_url() ?>assets/karma/img/brand/4.png" alt="">
-				</a>
-				<a class="col single-img" href="#">
-					<img class="img-fluid d-block mx-auto" src="<?php echo base_url() ?>assets/karma/img/brand/5.png" alt="">
-				</a>
-			</div>
-		</div>
-	</section>
-	<!-- End brand Area -->
-
-	<!-- Start related-product Area -->
-<section class="related-product-area section_gap">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-lg-6 text-center">
-				<div class="section-title">
-					<h1>Favorite Product</h1>
-					<p>Inilah produk terlaris yang ada ditoko sazan shop.</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-9">
-				<div class="row">
-					<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-						<div class="single-related-product d-flex">
-							<a href="#"><img src="<?php echo base_url() ?>assets/karma/img/r1.jpg" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Black lace Heels</a>
-								<div class="price">
-									<h6>$189.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-						<div class="single-related-product d-flex">
-							<a href="#"><img src="<?php echo base_url() ?>assets/karma/img/r2.jpg" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Black lace Heels</a>
-								<div class="price">
-									<h6>$189.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-						<div class="single-related-product d-flex">
-							<a href="#"><img src="<?php echo base_url() ?>assets/karma/img/r3.jpg" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Black lace Heels</a>
-								<div class="price">
-									<h6>$189.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-						<div class="single-related-product d-flex">
-							<a href="#"><img src="<?php echo base_url() ?>assets/karma/img/r5.jpg" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Black lace Heels</a>
-								<div class="price">
-									<h6>$189.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-						<div class="single-related-product d-flex">
-							<a href="#"><img src="<?php echo base_url() ?>assets/karma/img/r6.jpg" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Black lace Heels</a>
-								<div class="price">
-									<h6>$189.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-						<div class="single-related-product d-flex">
-							<a href="#"><img src="<?php echo base_url() ?>assets/karma/img/r7.jpg" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Black lace Heels</a>
-								<div class="price">
-									<h6>$189.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="single-related-product d-flex">
-							<a href="#"><img src="<?php echo base_url() ?>assets/karma/img/r9.jpg" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Black lace Heels</a>
-								<div class="price">
-									<h6>$189.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="single-related-product d-flex">
-							<a href="#"><img src="<?php echo base_url() ?>assets/karma/img/r10.jpg" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Black lace Heels</a>
-								<div class="price">
-									<h6>$189.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<div class="single-related-product d-flex">
-							<a href="#"><img src="<?php echo base_url() ?>assets/karma/img/r11.jpg" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Black lace Heels</a>
-								<div class="price">
-									<h6>$189.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3">
-				<div class="ctg-right">
-					<a href="#" target="_blank">
-						<img class="img-fluid d-block mx-auto" src="img/category/c5.jpg" alt="">
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- End related-product Area -->
+	

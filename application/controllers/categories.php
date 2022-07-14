@@ -5,6 +5,10 @@ class Categories extends CI_Controller{
     {
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
         $data['produk']=$this->model_barang->tampil_data()->result();
+        $data['brand'] = $this->db->query("SELECT tb_tenant.*, COUNT(tb_produk.produkID) AS jumlah 
+                                            FROM tb_tenant, tb_produk
+                                            WHERE tb_tenant.tenantID = tb_produk.tenantID
+                                            GROUP BY tb_tenant.tenantID")->result();
         $this->load->view('templates/karma/header', $data);
 		$this->load->view('categories', $data);
         $this->load->view('templates/karma/footer');
