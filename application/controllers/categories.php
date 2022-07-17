@@ -87,4 +87,12 @@ class Categories extends CI_Controller{
         $this->load->view('templates/karma/footer');
     }
 
+    public function search(){
+        $keyword = $this->input->post('keyword');
+        $data['produk']=$this->model_barang->get_keyword($keyword);
+        $this->load->view('templates/karma/header', $data);
+        $this->load->view('search',$data);
+        $this->load->view('templates/karma/footer');
+    }
+
 }

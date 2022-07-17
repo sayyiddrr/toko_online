@@ -125,4 +125,5 @@ class dashboard extends CI_Controller{
         $this->load->view('best_tenant', $data);
         $this->load->view('templates/karma/footer');
     }
+
 }

@@ -60,4 +60,15 @@ class Model_barang extends CI_Model{
             return false;
         }
     }
+
+    public function get_keyword($keyword){
+        $this->db->select('*');
+        $this->db->from('tb_produk');
+        $this->db->like('nama_produk', $keyword);
+        $this->db->or_like('deskripsi', $keyword);
+        $this->db->or_like('harga_produk', $keyword);
+        $this->db->or_like('stok', $keyword);
+        return $this->db->get()->result();
+    }
+
 }
