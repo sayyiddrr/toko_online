@@ -72,7 +72,7 @@
                         <div>
                             <input type="file" name="gambar" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-sm primary-btn col-md-12">Proceed to Payment</button>
+                        <button type="submit" class="btn btn-sm primary-btn col-md-12">Proceed</button>
                     </form>
                 </div>
                 <div class="col-lg-4">
