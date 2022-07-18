@@ -64,6 +64,11 @@
                 <i class="fa fa-fw fa-edit"></i>
                 <span>Metode</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/data_barang/kategori') ?>">
+                <i class="fa fa-fw fa-edit"></i>
+                <span>Data Kategori</span></a>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-fw fa-user"></i> <span>Grafik</span>

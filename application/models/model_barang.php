@@ -71,4 +71,12 @@ class Model_barang extends CI_Model{
         return $this->db->get()->result();
     }
 
+    public function tampil_kategori(){
+        return $this->db->get('tb_kategori');
+    }
+
+    public function tambah_kategori($data,$table){
+        $this->db->insert($table,$data);
+    }
+
 }

@@ -40,4 +40,28 @@ class Data_barang extends CI_Controller{
         $this->load->view('tenant/detail_data', $data);
         $this->load->view('templates_tenant/footer');
     }
+
+    public function tambah_kategori()
+    {
+        $nama_kategori   = $this->input->post('nama_kategori');
+
+        $data = array(
+            'kategoriID'     => '',
+            'nama_kategori'  => $nama_kategori,
+        );
+
+        $this->model_barang->tambah_kategori($data, 'tb_kategori');
+        redirect('admin/data_barang/kategori');
+    }
+
+    public function kategori()
+    {
+        $data['admin'] = $this->db->get_where('tb_admin', ['adminID' => $this->session->userdata('adminID')])->row_array();
+        $data['kategori'] = $this->model_barang->tampil_kategori()->result();
+        $this->load->view('templates_admin/header', $data);
+        $this->load->view('templates_admin/sidebar', $data);
+        $this->load->view('admin/data_kategori', $data);
+        $this->load->view('templates_admin/footer');
+    }
+
 }
