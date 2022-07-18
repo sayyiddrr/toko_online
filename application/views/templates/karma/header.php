@@ -79,8 +79,18 @@
 							</li>
 						</ul>
 
+						<?php
+						$keranjang = $this->cart->contents();
+						$jml_item = 0;
+						foreach ($keranjang as $key => $value) {
+							$jml_item = $jml_item + $value['qty'];
+						} 
+						?>
 						<ul class="nav navbar-nav navbar-right">
-							<li class="nav-item"><a href="<?php echo base_url('dashboard/detail_keranjang') ?>" class="cart"><span class="ti-bag"></span></a></li>
+							<li class="nav-item"><a href="<?php echo base_url('dashboard/detail_keranjang') ?>" class="cart">
+							<span class="ti-bag"></span>
+							<i class="badge badge-danger navbar-badge"><?= $jml_item ?></i>
+							</a></li>
 							<li class="nav-item">
 								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
 							</li>
