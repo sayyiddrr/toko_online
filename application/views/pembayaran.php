@@ -31,6 +31,9 @@
                             <input type="text" class="form-control" id="kontak" name="kontak" placeholder="Telepon">
                         </div>
                         <div class="col-md-12 form-group p_star">
+                            <div class="creat_account">
+                                <h3>Metode Pengiriman</h3>
+                            </div>
                             <select class="country_select" name="metode_pengiriman" id="metode_pengiriman">
                                 <option value="JNE">JNE</option>
                                 <option value="JNT">JNT</option>
@@ -39,12 +42,16 @@
                             </select>
                         </div>
                         <div class="col-md-12 form-group p_star">
+                            <div class="creat_account">
+                                <h3>Metode Pembayaran</h3>
+                                <p>Harap membayar dengan cara transfer sesuai dengan TOTAL Harga sebesar Rp. <?php echo number_format($this->cart->total(), 0,',','.') ?></p> 
+                            </div>
                             <select class="country_select" name="metode_pembayaran" id="metode_pembayaran">
-                                <option value="BCA">BCA</option>
-                                <option value="BNI">BNI</option>
-                                <option value="BRI">BRI</option>
-                                <option value="MANDIRI">Mandiri</option>
-                                <option value="SazanPay">SazanPay</option>
+                                <option value="BCA">BCA 12855567 an PT.Sazan</option>
+                                <option value="BNI">BNI 54715556 an PT.Sazan</option>
+                                <option value="BRI">BRI 57887455 an PT.Sazan</option>
+                                <option value="MANDIRI">Mandiri 1287566 an PT.Sazan</option>
+                                <option value="SazanPay">SazanPay 785444 </option>
                             </select>
                         </div>
                         <div class="col-md-12 form-group">
