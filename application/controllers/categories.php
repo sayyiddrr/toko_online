@@ -22,7 +22,7 @@ class Categories extends CI_Controller{
             'qty'     => 1,
             'price'   => $barang->harga_produk,
             'name'    => $barang->nama_produk,
-            'diskon'    => $barang->diskon,
+            'diskon'  => $barang->diskon,
             
         );
     

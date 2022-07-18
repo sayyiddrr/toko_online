@@ -80,6 +80,9 @@
 									<div class="price">
 										<h6>Rp. <?php echo number_format($brg->harga_produk, 0,',','.') ?></h6>
 									</div>
+									<div class="stok">
+										<h7> Stok <?php echo $brg->stok ?></h7>
+									</div>
 									<div class="prd-bottom">
 
 										<a href="<?php echo base_url('categories/tambah_ke_keranjang/'.$brg->produkID )?>" class="social-info">
