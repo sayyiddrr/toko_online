@@ -21,9 +21,9 @@
                 <form class="form-inline">
                     
                     <div class="form-group mb-2 ml=5">
-                        <label for="staticEmail2" class="">tahun</label>
+                        <label for="staticEmail2" class="">Tahun</label>
                         <select class="form-control" name="tahun" id="">
-                            <option value="">pilih tahun</option>
+                            <option value="">Pilih Tahun</option>
                             <?php $tahun = date('Y');
                             for($i=2017;$i<$tahun+5;$i++) { ?>
                                 <option value="<?php echo $i ?>"><?php echo $i ?></option>
@@ -46,12 +46,12 @@
             }
         ?>
         <div class="alert alert-info">
-            menapilkan laporan pendapatan tahun: <span class="font-weight-bold"><?php echo $tahun ?></span>
+            Menampilkan Laporan Pendapatan Tahun: <span class="font-weight-bold"><?php echo $tahun ?></span>
         </div>
         <table class="table table-bordered table-striped">
             <tr>
-                <td class="text-center">bulan</td>
-                <td class="text-center">pendapatan</td>
+                <td class="text-center">Bulan</td>
+                <td class="text-center">Pendapatan</td>
             </tr>
             <?php foreach($penjualan as $a) : ?>
                 <tr>
@@ -69,9 +69,9 @@
             
         <table class="table table-bordered table-striped">
             <tr>
-                <td class="text-center">kategori</td>
-                <td class="text-center">bulan</td>
-                <td class="text-center">pendapatan</td>
+                <td class="text-center">Kategori</td>
+                <td class="text-center">Bulan</td>
+                <td class="text-center">Pendapatan</td>
             </tr>
             <?php foreach($kategori as $k) : ?>
                 <tr>
@@ -90,9 +90,9 @@
             
         <table class="table table-bordered table-striped">
             <tr>
-                <td class="text-center">tenant</td>
-                <td class="text-center">bulan</td>
-                <td class="text-center">pendapatan</td>
+                <td class="text-center">Tenant</td>
+                <td class="text-center">Bulan</td>
+                <td class="text-center">Pendapatan</td>
             </tr>
             <?php foreach($tenant as $t) : ?>
                 <tr>

@@ -13,7 +13,7 @@ foreach ($datachart as $k => $v){
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Grafik Penjualan per Kategori
+            Grafik Penjualan Per-Kategori
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -29,7 +29,7 @@ foreach ($datachart as $k => $v){
         theme: "light1", // "light2", "dark1", "dark2"
         animationEnabled: false, // change to true		
         title:{
-            text: "Gradik pendapatan per Katergori"
+            text: "Grafik pendapatan Per-Kategori"
         },
         data: [
         {

@@ -13,7 +13,7 @@
     <section class="content">
       <table class="table table-bordered">
           <tr>
-              <th>NOMER</th>
+              <th>NOMOR</th>
               <th>NAMA BARANG</th>
               <th>HARGA</th>
               <th>DISKON</th>
@@ -27,7 +27,7 @@
 
           <tr>
               <td><?php echo $no++ ?></td>
-              <td><?php echo $brg->produkID ?></td>
+              <td><?php echo $brg->nama_produk ?></td>
               <td><?php echo $brg->harga ?></td>
               <td><?php echo $brg->diskon ?></td>
               <td><?php echo $brg->kuantitas ?></td>

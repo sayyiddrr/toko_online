@@ -48,11 +48,11 @@ class Model_order extends CI_Model{
     }
 
     public function tampil_order_tenant($id){
-        $query =    "SELECT 	tb_orderdetail.*
-                    FROM 	    tb_orderdetail, tb_produk, tb_tenant
-                    WHERE 	    tb_orderdetail.produkID = tb_produk.produkID
-                    AND		    tb_produk.tenantID = tb_tenant.tenantID
-                    AND	    	tb_tenant.tenantID = $id";
+        $query =    "SELECT 	*
+                    FROM 	    tb_orderdetail
+                    INNER JOIN tb_produk ON tb_orderdetail.produkID = tb_produk.produkID
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    AND tb_tenant.tenantID = $id";
         return $this->db->query($query);      
     }
 

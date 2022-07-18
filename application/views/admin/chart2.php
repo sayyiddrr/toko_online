@@ -11,8 +11,27 @@ foreach ($datachart as $k => $v){
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Grafik Penjualan per Tahun
+            Grafik Penjualan Per-Tahun
         </h1>
+        <div class="card-body">
+                <form class="form-inline">
+                    
+                    <div class="form-group mb-2 ml=5">
+                        <label for="staticEmail2" class="">Tahun</label>
+                        <select class="form-control" name="tahun" id="">
+                            <option value="">Pilih Tahun</option>
+                            <?php $tahun = date('Y');
+                            for($i=2017;$i<$tahun+5;$i++) { ?>
+                                <option value="<?php echo $i ?>"><?php echo $i ?></option>
+                                
+                            <?php }?>
+
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary mb-2 ml-auto"><i class="fa fa-eye"></i> Show</button>
+                </form>
+            </div>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Grafik</li>
@@ -26,7 +45,7 @@ foreach ($datachart as $k => $v){
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
             title:{
-                text: "Pendapatan per tahun"
+                text: "Pendapatan Per-Tahun"
             },
             axisX:{
                 valueFormatString: "DD MMM",
