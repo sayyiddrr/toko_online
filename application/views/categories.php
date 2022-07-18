@@ -47,6 +47,10 @@
 				<div class="top-filter-head">OUR BRANDS</div>
 				<div class="common-filter">
 					<div class="head">Brands</div>
+					<ul class="main-categories">
+					<li class="main-nav-list">
+						<a href="<?php echo base_url('categories/elektronik') ?>" aria-expanded="false" aria-controls="elektronik">Elektronik</a>
+					</li>
 						<?php foreach ($brand as $brn) : ?>
 							<form action="#">
 								<ul>

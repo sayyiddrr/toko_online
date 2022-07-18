@@ -46,6 +46,7 @@ class dashboard extends CI_Controller{
     }
 
     public function pembayaran(){
+        $this->form_validation->set_rules('gambar','gambar','required',['required' => 'gambar wajib diisi']);
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('templates/karma/header', $data);
         $this->load->view('pembayaran');

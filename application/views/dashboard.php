@@ -8,7 +8,7 @@
 						<div class="row single-slide align-items-center d-flex">
 							<div class="col-lg-5 col-md-6">
 								<div class="banner-content">
-									<h2>Selamat Datang di SAZAN <br>kepuasan anda prioritas kami!</h2>
+									<h2>Selamat Datang <?php echo $customer['nama']?> <br>kepuasan anda prioritas kami!</h2>
 									<p>SAZAN ini menyediakan berbagai macam produk kebutuhan anda. Nikmati kemudahan berbelanja di SAZAN, Enjoy Your Shoping</p>
 									
 								</div>

@@ -20,6 +20,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <h3>Shipping Address</h3>
+                    <?php echo $this->session->flashdata('pesan') ?>
                     <form class="row contact_form" action="<?php echo base_url('dashboard/proses_pesanan') ?>" method="post" novalidate="novalidate">
                         <div class="col-md-12 form-group p_star">
                             <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Penerima">
@@ -64,6 +65,12 @@
                                 <h3>Shipping Details</h3>
                             </div>
                             <textarea class="form-control" name="message" id="message" rows="1" placeholder="Order Notes"></textarea>
+                        </div>
+                        <div class="creat_account">
+                            <h5>Upload Bukti Transfer  </h5>
+                        </div>
+                        <div>
+                            <input type="file" name="gambar" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-sm primary-btn col-md-12">Proceed to Payment</button>
                     </form>

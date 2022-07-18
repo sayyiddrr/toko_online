@@ -66,37 +66,7 @@
             <div class="card-header bg-primary text-white">
                 Pendapatan Per-Kategori
             </div>
-            <div class="card-body">
-                <form class="form-inline">
-                    
-                    <div class="form-group mb-2 ml=5">
-                        <label for="staticEmail2" class="">tahun</label>
-                        <select class="form-control" name="tahun" id="">
-                            <option value="">pilih tahun</option>
-                            <?php $tahun = date('Y');
-                            for($i=2017;$i<$tahun+5;$i++) { ?>
-                                <option value="<?php echo $i ?>"><?php echo $i ?></option>
-                                
-                            <?php }?>
-
-                        </select>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary mb-2 ml-auto"><i class="fa fa-eye"></i> Show</button>
-                </form>
-            </div>
-        </div>
-        <?php
-            if((isset($_GET['tahun']) && $_GET['tahun']!='')){
             
-                $tahun = $_GET['tahun'];
-            }else{
-                $tahun = date('Y');
-            }
-        ?>
-        <div class="alert alert-info">
-            menapilkan laporan pendapatan tahun: <span class="font-weight-bold"><?php echo $tahun ?></span>
-        </div>
         <table class="table table-bordered table-striped">
             <tr>
                 <td class="text-center">kategori</td>
@@ -117,37 +87,7 @@
             <div class="card-header bg-primary text-white">
                 Pendapatan Per-Tenant
             </div>
-            <div class="card-body">
-                <form class="form-inline">
-                    
-                    <div class="form-group mb-2 ml=5">
-                        <label for="staticEmail2" class="">tahun</label>
-                        <select class="form-control" name="tahun" id="">
-                            <option value="">pilih tahun</option>
-                            <?php $tahun = date('Y');
-                            for($i=2017;$i<$tahun+5;$i++) { ?>
-                                <option value="<?php echo $i ?>"><?php echo $i ?></option>
-                                
-                            <?php }?>
-
-                        </select>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary mb-2 ml-auto"><i class="fa fa-eye"></i> Show</button>
-                </form>
-            </div>
-        </div>
-        <?php
-            if((isset($_GET['tahun']) && $_GET['tahun']!='')){
             
-                $tahun = $_GET['tahun'];
-            }else{
-                $tahun = date('Y');
-            }
-        ?>
-        <div class="alert alert-info">
-            menapilkan laporan pendapatan tahun: <span class="font-weight-bold"><?php echo $tahun ?></span>
-        </div>
         <table class="table table-bordered table-striped">
             <tr>
                 <td class="text-center">tenant</td>
