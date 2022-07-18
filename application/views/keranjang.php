@@ -25,6 +25,7 @@
                             <th scope="col">No</th>
                             <th scope="col">Product</th>
                             <th scope="col">Price</th>
+                            <th></th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Total</th>
                         </tr>
@@ -70,6 +71,7 @@
                             <td>
 
                             </td>
+                            <th></th>
                             <td>
                                 <h5>Subtotal</h5>
                             </td>
