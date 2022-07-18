@@ -127,4 +127,26 @@ class dashboard extends CI_Controller{
         $this->load->view('templates/karma/footer');
     }
 
+    public function tambah_jumlah_produk($id_produk)
+    {
+      $produk = $this->cart->get_item($id_produk);
+      $data = array(
+        'rowid' => $id_produk,
+        'qty' => $produk['qty'] + 1,
+      );
+      $this->cart->update($data);
+      redirect('dashboard/detail_keranjang');
+    }
+  
+    public function kurang_jumlah_produk($id_produk)
+    {
+      $produk = $this->cart->get_item($id_produk);
+      $data = array(
+        'rowid' => $id_produk,
+        'qty' => $produk['qty'] - 1,
+      );
+      $this->cart->update($data);
+      redirect('dashboard/detail_keranjang');
+    }
+
 }

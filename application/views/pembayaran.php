@@ -23,13 +23,13 @@
                     <?php echo $this->session->flashdata('pesan') ?>
                     <form class="row contact_form" action="<?php echo base_url('dashboard/proses_pesanan') ?>" method="post" novalidate="novalidate">
                         <div class="col-md-12 form-group p_star">
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Penerima">
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Penerima" value="<?=$this->session->flashdata('nama')?>"> 
                         </div>
                         <div class="col-md-12 form-group">
-                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat Penerima">
+                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat Penerima"value="<?=$this->session->flashdata('alamat')?>">
                         </div>
                         <div class="col-md-12 form-group">
-                            <input type="text" class="form-control" id="kontak" name="kontak" placeholder="Telepon">
+                            <input type="text" class="form-control" id="kontak" name="kontak" placeholder="Telepon" value="<?=$this->session->flashdata('telepon')?>">
                         </div>
                         <div class="col-md-12 form-group p_star">
                             <div class="creat_account">
