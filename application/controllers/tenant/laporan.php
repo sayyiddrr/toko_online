@@ -21,6 +21,15 @@ class Laporan extends CI_Controller{
                                                 AND tb_tenant.tenantID = $id
                                                 GROUP BY MONTH(tb_order.tgl_order)")->result();
 
+        $data['produk'] = $this->db->query("SELECT tb_produk.nama_produk, SUM(tb_orderdetail.harga) AS jumlah
+                                            FROM tb_orderdetail, tb_order, tb_produk, tb_tenant
+                                            WHERE tb_tenant.tenantID = tb_produk.tenantID
+                                            AND	tb_produk.produkID = tb_orderdetail.produkID
+                                            AND tb_orderdetail.orderID = tb_order.orderID
+                                            AND YEAR(tb_order.tgl_order) = $tahun
+                                            AND tb_tenant.tenantID = $id
+                                            GROUP BY tb_produk.nama_produk;")->result();
+                                            
         $this->load->view('templates_tenant/header', $data);
         $this->load->view('templates_tenant/sidebar', $data);
         $this->load->view('tenant/laporan', $data);
