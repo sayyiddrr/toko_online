@@ -43,7 +43,7 @@
 
         </table>
 
-        <a href="<?php echo base_url('admin/invoice/index')?>"><div class="btn btn-sm btn-primary">kembali</div></a>
+        <a href="<?php echo base_url('admin/dashboard_admin')?>"><div class="btn btn-sm btn-primary">kembali</div></a>
     </section>
 </div>
 <!-- /.content-wrapper -->
