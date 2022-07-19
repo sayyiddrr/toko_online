@@ -14,11 +14,16 @@
       <table class="table table-bordered">
           <tr>
               <th>NOMOR</th>
+              <th>ORDER ID</th>
               <th>NAMA BARANG</th>
               <th>HARGA</th>
               <th>DISKON</th>
+              <th>TANGGAL ORDER</th>
+              <th>NAMA PENERIMA</th>
+              <th>ALAMAT ORDER</th>
               <th>JUMLAH</th>
-              <th colspan="3">ACTION</th>
+              <th>STATUS PENGIRIMAN</th>
+              <th>STATUS PEMBAYARAN</th>
           </tr>
 
           <?php
@@ -27,15 +32,25 @@
 
           <tr>
               <td><?php echo $no++ ?></td>
+              <td><?php echo $brg->orderID ?></td>
               <td><?php echo $brg->nama_produk ?></td>
-              <td><?php echo $brg->harga ?></td>
+              <td>Rp. <?php echo number_format($brg->harga, 0,',','.') ?></td>
               <td><?php echo $brg->diskon ?></td>
+              <td><?php echo $brg->tgl_order ?></td>
+              <td><?php echo $brg->nama_penerima ?></td>
+              <td><?php echo $brg->alamat_penerima ?></td>
               <td><?php echo $brg->kuantitas ?></td>
-              <td><?php echo anchor('admin/data_barang/detail/'.$brg->produkID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div') ?></td>
-              <td><?php echo anchor('admin/data_barang/edit/'.$brg->produkID, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
-              <td><?php echo anchor('admin/data_barang/hapus/'.$brg->produkID, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
+              
+              <td>
+                            <select class="country_select" name="status_order" id="status_order">
+                                <option value="">Pending</option>
+                                <option value="">Shipping</option>
+                                <option value="">Complete</option>
+                            </select>      
+              </td>
           </tr>
           <?php endforeach; ?>
+        
 
       </table>
     </section>

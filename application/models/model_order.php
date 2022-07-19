@@ -52,6 +52,7 @@ class Model_order extends CI_Model{
                     FROM 	    tb_orderdetail
                     INNER JOIN tb_produk ON tb_orderdetail.produkID = tb_produk.produkID
                     INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_order ON tb_orderdetail.orderID = tb_order.orderID
                     AND tb_tenant.tenantID = $id";
         return $this->db->query($query);      
     }
