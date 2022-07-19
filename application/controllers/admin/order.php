@@ -16,7 +16,9 @@ class Order extends CI_Controller{
     }
     public function index(){
         $data['admin'] = $this->db->get_where('tb_admin', ['adminID' => $this->session->userdata('adminID')])->row_array();
-        $data['invoice'] = $this->model_order->tampil_data();
+        $data['invoice'] = $this->db->query("SELECT 	*
+                                            FROM 	    tb_order
+                                            INNER JOIN tb_customer ON tb_order.custID = tb_customer.custID")->result(); 
         $this->load->view('templates_admin/header',$data);
         $this->load->view('templates_admin/sidebar',$data);
         $this->load->view('admin/invoice',$data);
@@ -28,7 +30,11 @@ class Order extends CI_Controller{
     {
         $data['admin'] = $this->db->get_where('tb_admin', ['adminID' => $this->session->userdata('adminID')])->row_array();
         $data['invoice'] = $this->model_order->ambil_id_invoice($orderID);
-        $data['pesanan'] = $this->model_order->ambil_id_pesanan($orderID);
+       
+        $data['pesanan'] = $this->db->query("SELECT *
+                                            FROM tb_produk, tb_orderdetail
+                                            WHERE tb_produk.produkID = tb_orderdetail.produkID
+                                            AND	tb_orderdetail.orderID = $orderID")->result();
         $this->load->view('templates_admin/header',$data);
         $this->load->view('templates_admin/sidebar',$data);
         $this->load->view('admin/detail_invoice',$data);

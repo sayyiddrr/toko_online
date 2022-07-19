@@ -28,7 +28,7 @@
         <?php foreach($invoice as $inv): ?>
             <tr>
                 <td><?php echo $inv->orderID ?></td>
-                <td><?php echo $inv->custID ?></td>
+                <td><?php echo $inv->nama?></td>
                 <td><?php echo $inv->nama_penerima ?></td>
                 <td><?php echo $inv->alamat_penerima ?></td>
                 <td><?php echo $inv->tgl_order ?></td>
