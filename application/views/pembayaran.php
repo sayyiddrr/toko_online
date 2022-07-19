@@ -56,22 +56,10 @@
                             </select>
                         </div>
                         <div class="col-md-12 form-group">
-                            <h3>Have a Coupon?</h3>
-                            <input type="text" class="form-control" placeholder="Enter coupon code"><br>
-                            <a class="tp_btn" href="#">Apply Coupon</a>
+                            <p>Masukkan TOTAL Harga sebesar Rp. <?php echo number_format($this->cart->total(), 0,',','.') ?></p>
+                            <input type="text" class="form-control" id="subtotal" name="subtotal" placeholder="subtotal" value="<?=$this->session->flashdata('subtotal')?>">
                         </div>
-                        <div class="col-md-12 form-group">
-                            <div class="creat_account">
-                                <h3>Shipping Details</h3>
-                            </div>
-                            <textarea class="form-control" name="message" id="message" rows="1" placeholder="Order Notes"></textarea>
-                        </div>
-                        <div class="creat_account">
-                            <h5>Upload Bukti Transfer  </h5>
-                        </div>
-                        <div>
-                            <input type="file" name="gambar" class="form-control">
-                        </div>
+                        
                         <button type="submit" class="btn btn-sm primary-btn col-md-12">Proceed</button>
                     </form>
                 </div>

@@ -31,6 +31,9 @@
                     <div class="list-group list-group-flush">
                         <a href="<?php echo base_url('dashboard/myaccount') ?>" class="list-group-item list-group-item-action active">My Account</a>
                     </div>
+                    <div class="list-group list-group-flush">
+                        <a href="<?php echo base_url('transaksi') ?>" class="list-group-item list-group-item-action active">My Order</a>
+                    </div>
                 </div>
                 <!-- /#sidebar-wrapper -->
 
