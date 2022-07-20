@@ -32,7 +32,8 @@
                         <ul class="list">
                             <li><a><span>Category</span><?php echo $brg->kategoriID?></a></li>
                             <li><a><span>In Stock</span><?php echo $brg->stok?></a></li>
-                            <li><a class="active" href="#"><span>Brand</span><?php echo $brg->tenantID?></a></li>
+                            <li><a class="active" href="#"><span>Brand</span><?php echo $brg->nama_tenant?></a></li>
+                            
                         </ul>
                         <p><?php echo $brg->deskripsi?></p>
                         <div class="card_area d-flex align-items-center">
