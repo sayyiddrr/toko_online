@@ -26,6 +26,8 @@
                             <tr>
                                 <th>Order ID</th>
                                 <th>Tanggal</th>
+                                <th>Nama Penerima</th>
+                                <th>Alamat Penerima</th>
                                 <th>Ekspedisi</th>
                                 <th>Total</th>
                                 <th>Action</th>
@@ -34,9 +36,11 @@
                             <tr>
                                 <td><?php echo $trs->orderID?></td>
                                 <td><?php echo $trs->tgl_order?></td>
+                                <td><?php echo $trs->nama_penerima?></td>
+                                <td><?php echo $trs->alamat_penerima?></td>
                                 <td><?php echo $trs->metode_pengiriman?></td>
                                 <td>
-                                    <?php echo $trs->subtotal?><br>
+                                    Rp. <?php echo number_format($trs->subtotal, 0,',','.')?><br>
                                     <?php if ($trs->status_order == 'belum'){ ?>
                                         <span class="badge badge-danger">belum bayar</span>
                                     <?php } else { ?>
@@ -58,6 +62,8 @@
                             <tr>
                                 <th>Order ID</th>
                                 <th>Tanggal</th>
+                                <th>Nama Penerima</th>
+                                <th>Alamat Penerima</th>
                                 <th>Ekspedisi</th>
                                 <th>Total</th>
                             </tr>
@@ -65,9 +71,11 @@
                             <tr>
                                 <td><?php echo $trs->orderID?></td>
                                 <td><?php echo $trs->tgl_order?></td>
+                                <td><?php echo $trs->nama_penerima?></td>
+                                <td><?php echo $trs->alamat_penerima?></td>
                                 <td><?php echo $trs->metode_pengiriman?></td>
                                 <td>
-                                    <?php echo $trs->subtotal?><br>
+                                    Rp. <?php echo number_format($trs->subtotal, 0,',','.')?><br>
                                     <span class="badge badge-danger">proses</span>
                                     
                                 </td>
@@ -81,6 +89,8 @@
                             <tr>
                                 <th>Order ID</th>
                                 <th>Tanggal</th>
+                                <th>Nama Penerima</th>
+                                <th>alamat Penerima</th>
                                 <th>Ekspedisi</th>
                                 <th>Total</th>
                             </tr>
@@ -88,9 +98,11 @@
                             <tr>
                                 <td><?php echo $trs->orderID?></td>
                                 <td><?php echo $trs->tgl_order?></td>
+                                <td><?php echo $trs->nama_penerima?></td>
+                                <td><?php echo $trs->alamat_penerima?></td>
                                 <td><?php echo $trs->metode_pengiriman?></td>
                                 <td>
-                                    <?php echo $trs->subtotal?><br>
+                                    Rp. <?php echo number_format($trs->subtotal, 0,',','.')?><br>
                                     <span class="badge badge-danger">selesai</span>
                                     
                                 </td>

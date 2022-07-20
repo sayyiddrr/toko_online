@@ -37,6 +37,7 @@
                     <div class="list-group list-group-flush">
                         <a href="<?php echo base_url('transaksi/myorder') ?>" class="list-group-item list-group-item-action active">My Order</a>
                     </div>
+                
                 </div>
                 <!-- /#sidebar-wrapper -->
 
@@ -77,59 +78,37 @@
                             <div class="dashboard-heading">
                                 <h2 class="dashboard-title">My Account</h2>
                                 <p class="dashboard-subtitle">
-                                    Profile Anda Saat Ini
+                                    My Order
                                 </p>
                             </div>
-                            <div class="dashboard-content">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <form action="#">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div class="row mb-2">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="name">Nama</label>
-                                                                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="nama" value="<?php echo $customer['nama']?>" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="username">Username</label>
-                                                                <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" value="<?php echo $customer['username'] ?>" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="email">Email</label>
-                                                                <input type="email" class="form-control" id="email" name="email" value="<?php echo $customer['email']?>" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="no_hp">No. Handphone</label>
-                                                                <input type="text" class="form-control" id="telepon" name="no_hp" value="<?php echo $customer['telepon']?>" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="no_hp">Password</label>
-                                                                <input type="text" class="form-control" id="no_hp" name="password" value="<?php echo $customer['password']?>" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="alamat">Alamat</label>
-                                                                <input type="text" class="form-control" id="alamat" aria-describedby="emailHelp" name="alamat" value="<?php echo $customer['alamat']?>" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                                            <table class="table">
+                                                <tr>
+                                                    <th>Order ID</th>
+                                                    <th>Nama Produk</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Ekspedisi</th>
+                                                    <th>Harga Produk</th>
+                                                    
+                                                </tr>
+                                                <?php foreach($pesanan as $psn):?>
+                                                    <tr>
+                                                    <td><?php echo $psn->orderID?></td>
+                                                    <td><?php echo $psn->nama_produk?></td>
+                                                    <td><?php echo $psn->tgl_order?></td>
+                                                    <td><?php echo $psn->metode_pengiriman?></td>
+                                                    <td>
+                                                        Rp. <?php echo number_format($psn->harga_produk, 0,',','.')?><br>
+                                                    </td>
+                                                    <td>
+                                                        <?php if ($psn->status_order == 'dikirim'){ ?>
+                                                        <a href="<?php echo base_url('transaksi/konfirmasi/'.$psn->orderID) ?>" class="btn btn-sm bts-flat btn-success">Konfirmasi Diterima</a>
+                                                        <?php } ?>
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <?php   endforeach?>
+                                            </table>
+                        
                         </div>
                     </div>
                 </div>
