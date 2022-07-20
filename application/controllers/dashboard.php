@@ -71,8 +71,9 @@ class dashboard extends CI_Controller{
     {
         $data['barang'] = $this->model_barang->detail_brg($produkID);
         $data['barang'] = $this->db->query("SELECT * 
-                                            FROM tb_produk 
+                                            FROM tb_produk
                                             INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                                            INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
                                             WHERE produkID = $produkID;")->result();
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('templates/karma/header', $data);

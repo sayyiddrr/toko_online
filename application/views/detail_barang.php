@@ -29,7 +29,7 @@
                         <h3><?php echo $brg->nama_produk?></h3>
                         <h2>Rp. <?php echo number_format($brg->harga_produk,0,',','.')?></h2>
                         <ul class="list">
-                            <li><a><span>Category</span><?php echo $brg->kategoriID?></a></li>
+                            <li><a><span>Category</span><?php echo $brg->nama_kategori?></a></li>
                             <li><a><span>In Stock</span><?php echo $brg->stok?></a></li>
                             <li><a class="active" href="#"><span>Brand</span><?php echo $brg->nama_tenant?></a></li>
                             
