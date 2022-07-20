@@ -26,17 +26,23 @@
                             <tr>
                                 <th>Order ID</th>
                                 <th>Tanggal</th>
+                                <th>Nama Barang</th>
+                                <th>Nama Penerima</th>
+                                <th>Alamat Penerima</th>
                                 <th>Ekspedisi</th>
-                                <th>Total</th>
+                                <th>Harga Produk</th>
                                 <th>Action</th>
                             </tr>
                             <?php foreach($order as $trs):?>
                             <tr>
                                 <td><?php echo $trs->orderID?></td>
                                 <td><?php echo $trs->tgl_order?></td>
+                                <td><?php echo $trs->nama_produk?></td>
+                                <td><?php echo $trs->nama_penerima?></td>
+                                <td><?php echo $trs->alamat_penerima?></td>
                                 <td><?php echo $trs->metode_pengiriman?></td>
                                 <td>
-                                    <?php echo $trs->subtotal?><br>
+                                    Rp. <?php echo number_format($trs->harga_produk, 0,',','.')?><br>
                                     <?php if ($trs->status_order == 'belum'){ ?>
                                         <span class="badge badge-danger">belum bayar</span>
                                     <?php } else { ?>
@@ -58,16 +64,22 @@
                             <tr>
                                 <th>Order ID</th>
                                 <th>Tanggal</th>
+                                <th>Nama Barang</th>
+                                <th>Nama Penerima</th>
+                                <th>Alamat Penerima</th>
                                 <th>Ekspedisi</th>
-                                <th>Total</th>
+                                <th>Harga Produk</th>
                             </tr>
                             <?php foreach($kirim as $trs):?>
                             <tr>
                                 <td><?php echo $trs->orderID?></td>
                                 <td><?php echo $trs->tgl_order?></td>
+                                <td><?php echo $trs->nama_produk?></td>
+                                <td><?php echo $trs->nama_penerima?></td>
+                                <td><?php echo $trs->alamat_penerima?></td>
                                 <td><?php echo $trs->metode_pengiriman?></td>
                                 <td>
-                                    <?php echo $trs->subtotal?><br>
+                                    <?php echo $trs->harga_produk?><br>
                                     <span class="badge badge-danger">selesai</span>
                                     
                                 </td>
@@ -81,16 +93,22 @@
                             <tr>
                                 <th>Order ID</th>
                                 <th>Tanggal</th>
+                                <th>Nama Produk</th>
+                                <th>Nama Penerima</th>
+                                <th>Alamat Penerima</th>
                                 <th>Ekspedisi</th>
-                                <th>Total</th>
+                                <th>Harga Produk</th>
                             </tr>
                             <?php foreach($selesai as $trs):?>
                             <tr>
                                 <td><?php echo $trs->orderID?></td>
                                 <td><?php echo $trs->tgl_order?></td>
+                                <td><?php echo $trs->nama_produk?></td>
+                                <td><?php echo $trs->nama_penerima?></td>
+                                <td><?php echo $trs->alamat_penerima?></td>
                                 <td><?php echo $trs->metode_pengiriman?></td>
                                 <td>
-                                    <?php echo $trs->subtotal?><br>
+                                    Rp. <?php echo number_format($trs->harga_produk, 0,',','.')?><br>
                                     <span class="badge badge-danger">selesai</span>
                                     
                                 </td>

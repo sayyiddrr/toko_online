@@ -32,8 +32,12 @@
                         <a href="<?php echo base_url('dashboard/myaccount') ?>" class="list-group-item list-group-item-action active">My Account</a>
                     </div>
                     <div class="list-group list-group-flush">
-                        <a href="<?php echo base_url('transaksi') ?>" class="list-group-item list-group-item-action active">My Order</a>
+                        <a href="<?php echo base_url('transaksi') ?>" class="list-group-item list-group-item-action active">Tracking Order</a>
                     </div>
+                    <div class="list-group list-group-flush">
+                        <a href="<?php echo base_url('transaksi/myorder') ?>" class="list-group-item list-group-item-action active">My Order</a>
+                    </div>
+                
                 </div>
                 <!-- /#sidebar-wrapper -->
 
@@ -93,6 +97,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link" id="custom-tabs-four-settings-tab" data-toggle="pill" href="#custom-tabs-four-settings" role="tab" aria-controls="custom-tabs-four-settings" aria-selected="false">Confirmation</a>
                                         </li>
+                                        
                                         </ul>
                                     </div>
                                     <div class="card-body">
@@ -101,18 +106,20 @@
                                             <table class="table">
                                                 <tr>
                                                     <th>Order ID</th>
+                                                    <th>Nama Barang</th>
                                                     <th>Tanggal</th>
                                                     <th>Ekspedisi</th>
-                                                    <th>Total</th>
+                                                    <th>Harga Produk</th>
                                                     <th>Action</th>
                                                 </tr>
                                                 <?php foreach($transaksi as $trs):?>
                                                 <tr>
                                                     <td><?php echo $trs->orderID?></td>
+                                                    <td><?php echo $trs->nama_produk?></td>
                                                     <td><?php echo $trs->tgl_order?></td>
                                                     <td><?php echo $trs->metode_pengiriman?></td>
                                                     <td>
-                                                        <?php echo $trs->subtotal?><br>
+                                                        <?php echo $trs->harga_produk?><br>
                                                         <?php if ($trs->status_order == 'belum'){ ?>
                                                             <span class="badge badge-danger">belum bayar</span>
                                                         <?php } elseif ($trs->status_order == 'sudah bayar'){ ?>
@@ -134,17 +141,19 @@
                                             <table class="table">
                                                 <tr>
                                                     <th>Order ID</th>
+                                                    <th>Nama Barang</th>
                                                     <th>Tanggal</th>
                                                     <th>Ekspedisi</th>
-                                                    <th>Total</th>
+                                                    <th>Harga Produk</th>
                                                 </tr>
                                                 <?php foreach($proses as $trs):?>
                                                 <tr>
                                                     <td><?php echo $trs->orderID?></td>
+                                                    <td><?php echo $trs->nama_produk?></td>
                                                     <td><?php echo $trs->tgl_order?></td>
                                                     <td><?php echo $trs->metode_pengiriman?></td>
                                                     <td>
-                                                        <?php echo $trs->subtotal?><br>
+                                                        Rp. <?php echo number_format($trs->harga_produk, 0,',','.')?><br>
                                                         <span class="badge badge-primary">proses</span>
                                                     </td>
                                                 </tr>
@@ -155,17 +164,19 @@
                                             <table class="table">
                                                 <tr>
                                                     <th>Order ID</th>
+                                                    <th>Nama Barang</th>
                                                     <th>Tanggal</th>
                                                     <th>Ekspedisi</th>
-                                                    <th>Total</th>
+                                                    <th>Harga Produk</th>
                                                 </tr>
                                                 <?php foreach($tunggu as $trs):?>
                                                 <tr>
                                                     <td><?php echo $trs->orderID?></td>
+                                                    <td><?php echo $trs->nama_produk?></td>
                                                     <td><?php echo $trs->tgl_order?></td>
                                                     <td><?php echo $trs->metode_pengiriman?></td>
                                                     <td>
-                                                        <?php echo $trs->subtotal?><br>
+                                                        Rp. <?php echo number_format($trs->harga_produk, 0,',','.')?><br>
                                                         <span class="badge badge-primary">shipped</span>
                                                         
                                                     </td>
@@ -178,18 +189,20 @@
                                             <table class="table">
                                                 <tr>
                                                     <th>Order ID</th>
+                                                    <th>Nama Produk</th>
                                                     <th>Tanggal</th>
                                                     <th>Ekspedisi</th>
-                                                    <th>Total</th>
+                                                    <th>Harga Produk</th>
                                                     <th>Action</th>
                                                 </tr>
                                                 <?php foreach($kirim as $trs):?>
                                                 <tr>
                                                     <td><?php echo $trs->orderID?></td>
+                                                    <td><?php echo $trs->nama_produk?></td>
                                                     <td><?php echo $trs->tgl_order?></td>
                                                     <td><?php echo $trs->metode_pengiriman?></td>
                                                     <td>
-                                                        <?php echo $trs->subtotal?><br>
+                                                        Rp. <?php echo number_format($trs->harga_produk, 0,',','.')?><br>
                                                     </td>
                                                     <td>
                                                         <?php if ($trs->status_order == 'dikirim'){ ?>
@@ -201,6 +214,9 @@
                                                 <?php   endforeach?>
                                             </table>
                                         </div>
+
+                                        
+
                                         </div>
                                     </div>
                                     <!-- /.card -->
