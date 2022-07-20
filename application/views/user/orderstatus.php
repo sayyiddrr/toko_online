@@ -113,15 +113,17 @@
                                                     <td><?php echo $trs->metode_pengiriman?></td>
                                                     <td>
                                                         <?php echo $trs->subtotal?><br>
-                                                        <?php if ($trs->status_bayar = 'belum'){ ?>
+                                                        <?php if ($trs->status_order == 'belum'){ ?>
                                                             <span class="badge badge-danger">belum bayar</span>
+                                                        <?php } elseif ($trs->status_order == 'sudah bayar'){ ?>
+                                                            <span class="badge badge-primary">proses</span>
                                                         <?php } else { ?>
-                                                            <span class="badge badge-success">sudah bayar</span>
+                                                            <span class="badge badge-success">selesai</span>
                                                         <?php } ?>
                                                     </td>
                                                     <td>
-                                                        <?php if ($trs->status_bayar = 'belum'){ ?>
-                                                        <a href="<?php echo base_url('transaksi/bayar/'.$trs->orderID) ?>" class="btn btn-sm bts-flat btn-primary">bayar</a>
+                                                        <?php if ($trs->status_order == 'belum'){ ?>
+                                                        <a href="<?php echo base_url('transaksi/update/'.$trs->orderID) ?>" class="btn btn-sm bts-flat btn-primary">bayar</a>
                                                         <?php } ?>
                                                     </td>
                                                 </tr>
@@ -129,13 +131,75 @@
                                             </table>
                                         </div>
                                         <div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
-                                            Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam.
+                                            <table class="table">
+                                                <tr>
+                                                    <th>Order ID</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Ekspedisi</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                                <?php foreach($proses as $trs):?>
+                                                <tr>
+                                                    <td><?php echo $trs->orderID?></td>
+                                                    <td><?php echo $trs->tgl_order?></td>
+                                                    <td><?php echo $trs->metode_pengiriman?></td>
+                                                    <td>
+                                                        <?php echo $trs->subtotal?><br>
+                                                        <span class="badge badge-primary">proses</span>
+                                                    </td>
+                                                </tr>
+                                                <?php   endforeach?>
+                                            </table>
                                         </div>
                                         <div class="tab-pane fade" id="custom-tabs-four-messages" role="tabpanel" aria-labelledby="custom-tabs-four-messages-tab">
-                                            Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna.
+                                            <table class="table">
+                                                <tr>
+                                                    <th>Order ID</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Ekspedisi</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                                <?php foreach($tunggu as $trs):?>
+                                                <tr>
+                                                    <td><?php echo $trs->orderID?></td>
+                                                    <td><?php echo $trs->tgl_order?></td>
+                                                    <td><?php echo $trs->metode_pengiriman?></td>
+                                                    <td>
+                                                        <?php echo $trs->subtotal?><br>
+                                                        <span class="badge badge-primary">shipped</span>
+                                                        
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <?php   endforeach?>
+                                            </table>
                                         </div>
                                         <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
-                                            Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
+                                            <table class="table">
+                                                <tr>
+                                                    <th>Order ID</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Ekspedisi</th>
+                                                    <th>Total</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                                <?php foreach($kirim as $trs):?>
+                                                <tr>
+                                                    <td><?php echo $trs->orderID?></td>
+                                                    <td><?php echo $trs->tgl_order?></td>
+                                                    <td><?php echo $trs->metode_pengiriman?></td>
+                                                    <td>
+                                                        <?php echo $trs->subtotal?><br>
+                                                    </td>
+                                                    <td>
+                                                        <?php if ($trs->status_order == 'dikirim'){ ?>
+                                                        <a href="<?php echo base_url('transaksi/konfirmasi/'.$trs->orderID) ?>" class="btn btn-sm bts-flat btn-success">Konfirmasi Diterima</a>
+                                                        <?php } ?>
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <?php   endforeach?>
+                                            </table>
                                         </div>
                                         </div>
                                     </div>
