@@ -5,9 +5,8 @@
 			<div class="col-first">
 				<h1>Shop Category</h1>
 				<nav class="d-flex align-items-center">
-					<a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-					<a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>
-					<a href="category.html">Shop Category</a>
+					<a href="">Shop<span class="lnr lnr-arrow-right"></span></a>
+					<a href="">Shop Category</a>
 				</nav>
 			</div>
 		</div>
@@ -49,15 +48,36 @@
 					<div class="head">Brands</div>
 					<ul class="main-categories">
 					<li class="main-nav-list">
-						<a href="<?php echo base_url('categories/elektronik') ?>" aria-expanded="false" aria-controls="elektronik">Elektronik</a>
+						<a href="<?php echo base_url('categories/adidas') ?>" aria-expanded="false" aria-controls="elektronik">Adidas</a>
 					</li>
-						<?php foreach ($brand as $brn) : ?>
-							<form action="#">
-								<ul>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple"><?php echo $brn->nama_tenant ?><span> (<?php echo $brn->jumlah ?>)</span></label></li>
-								</ul>
-							</form>
-						<?php endforeach; ?>
+					<li class="main-nav-list">
+						<a href="<?php echo base_url('categories/nike') ?>" aria-expanded="false" aria-controls="elektronik">Nike</a>
+					</li>
+					<li class="main-nav-list">
+						<a href="<?php echo base_url('categories/asus') ?>" aria-expanded="false" aria-controls="elektronik">Asus</a>
+					</li>
+					<li class="main-nav-list">
+						<a href="<?php echo base_url('categories/hp') ?>" aria-expanded="false" aria-controls="elektronik">HP</a>
+					</li>
+					<li class="main-nav-list">
+						<a href="<?php echo base_url('categories/rexona') ?>" aria-expanded="false" aria-controls="elektronik">Rexona</a>
+					</li>
+					<li class="main-nav-list">
+						<a href="<?php echo base_url('categories/zara') ?>" aria-expanded="false" aria-controls="elektronik">Zara</a>
+					</li>
+					<li class="main-nav-list">
+						<a href="<?php echo base_url('categories/hm') ?>" aria-expanded="false" aria-controls="elektronik">H&M</a>
+					</li>
+					<li class="main-nav-list">
+						<a href="<?php echo base_url('categories/rebook') ?>" aria-expanded="false" aria-controls="elektronik">Rebook</a>
+					</li>
+					<li class="main-nav-list">
+						<a href="<?php echo base_url('categories/samsung') ?>" aria-expanded="false" aria-controls="elektronik">Samsung</a>
+					</li>
+					<li class="main-nav-list">
+						<a href="<?php echo base_url('categories/apple') ?>" aria-expanded="false" aria-controls="elektronik">Apple</a>
+					</li>
+					
 				</div>
 			</div>
 		</div>

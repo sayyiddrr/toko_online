@@ -3,10 +3,10 @@
 	<div class="container">
 		<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 			<div class="col-first">
-				<h1>Shop Category</h1>
+				<h1>Shop Brands</h1>
 				<nav class="d-flex align-items-center">
 					<a href="">Shop<span class="lnr lnr-arrow-right"></span></a>
-					<a href="">Shop Category</a>
+					<a href="">Shop Brands</a>
 				</nav>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 				<div class="top-filter-head">Product Filters</div>
 				<div class="common-filter">
 					<div class="head">Brands</div>
-					<ul class="main-categories">
+                    <ul class="main-categories">
 						<ul>
                             <li class="main-nav-list">
                             <a href="<?php echo base_url('categories/adidas') ?>" aria-expanded="false" aria-controls="elektronik">Adidas</a>
@@ -91,7 +91,7 @@
 			<!-- Start Best Seller -->
 			<section class="lattest-product-area pb-40 category-list">
 				<div class="row">
-					<?php foreach ($elektronik as $brg) : ?>
+					<?php foreach ($nike as $brg) : ?>
 					<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
@@ -129,7 +129,7 @@
 			<!-- End Best Seller -->
 			<!-- Start Filter Bar -->
 			<div class="filter-bar d-flex flex-wrap align-items-center">
-
+				
 			</div>
 			<!-- End Filter Bar -->
 		</div>

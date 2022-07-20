@@ -117,4 +117,143 @@ class Categories extends CI_Controller{
         $this->load->view('templates/karma/footer');
     }
 
+    public function adidas()
+    {
+        $data['adidas'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_tenant.tenantID = 11")->result();
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
+        $this->load->view('adidas',$data);
+        $this->load->view('templates/karma/footer');
+    }
+
+    public function nike()
+    {
+        $data['nike'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_tenant.tenantID = 12")->result();
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
+        $this->load->view('nike',$data);
+        $this->load->view('templates/karma/footer');
+    }
+
+    public function asus()
+    {
+        $data['asus'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_tenant.tenantID = 14")->result();
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
+        $this->load->view('asus',$data);
+        $this->load->view('templates/karma/footer');
+    }
+
+    public function hp()
+    {
+        $data['hp'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_tenant.tenantID = 15")->result();
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
+        $this->load->view('hp',$data);
+        $this->load->view('templates/karma/footer');
+    }
+
+    public function rexona()
+    {
+        $data['rexona'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_tenant.tenantID = 16")->result();
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
+        $this->load->view('rexona',$data);
+        $this->load->view('templates/karma/footer');
+    }
+
+    public function zara()
+    {
+        $data['zara'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_tenant.tenantID = 17")->result();
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
+        $this->load->view('zara',$data);
+        $this->load->view('templates/karma/footer');
+    }
+
+    public function hm()
+    {
+        $data['hm'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_tenant.tenantID = 18")->result();
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
+        $this->load->view('hm',$data);
+        $this->load->view('templates/karma/footer');
+    }
+
+    public function rebook()
+    {
+        $data['rebook'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_tenant.tenantID = 19")->result();
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
+        $this->load->view('rebook',$data);
+        $this->load->view('templates/karma/footer');
+    }
+
+    public function samsung()
+    {
+        $data['samsung'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_tenant.tenantID = 20")->result();
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
+        $this->load->view('samsung',$data);
+        $this->load->view('templates/karma/footer');
+    }
+
+    public function apple()
+    {
+        $data['apple'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_tenant.tenantID = 21")->result();
+        $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
+        $this->load->view('templates/karma/header', $data);
+        $this->load->view('apple',$data);
+        $this->load->view('templates/karma/footer');
+    }
 }
