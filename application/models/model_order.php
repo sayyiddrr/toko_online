@@ -10,6 +10,7 @@ class Model_order extends CI_Model{
         $kontak     = $this->input->post('kontak');
         $metode_pembayaran  = $this->input->post('metode_pembayaran');
         $metode_pengiriman  = $this->input->post('metode_pengiriman');
+        $subtotal   = $this->input->post('subtotal');
         $invoice    = array(
             'custID'            => $custID,
             'nama_penerima'          => $nama,
@@ -18,6 +19,9 @@ class Model_order extends CI_Model{
             'tgl_order'         => date('Y-m-d'),
             'metode_pembayaran' => $metode_pembayaran,
             'metode_pengiriman' => $metode_pengiriman,
+            'subtotal' => $subtotal,
+            'status_bayar' => 'belum',
+
             
         );
         $this->db->insert('tb_order', $invoice);

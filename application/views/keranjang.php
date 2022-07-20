@@ -46,16 +46,16 @@
                             <td>
                                 <h5>Rp. <?php echo number_format($items['price'], 0,',','.') ?></h5>
                             </td>
-                            <td><h5><?php echo $items['qty'] ?></h5></td> 
-                                <td>
-                                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                        <a href="<?=base_url()?>dashboard/kurang_jumlah_produk/<?=$items['rowid']?>" class="btn btn-sm btn-danger ">min
-                                        </a>
-                                        <span style="margin-left: 10px; margin-right: 10px; "><?=$items['qty'] ?></span>
-                                        <a href="<?=base_url()?>dashboard/tambah_jumlah_produk/<?=$items['rowid']?>" class="btn btn-sm btn-success">plus
-                                        </a>
-                                    </div>
-                                </td>
+                            <td></td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                    <a href="<?=base_url()?>dashboard/kurang_jumlah_produk/<?=$items['rowid']?>" class="btn btn-sm btn-danger ">min
+                                    </a>
+                                    <span style="margin-left: 10px; margin-right: 10px; "><?=$items['qty'] ?></span>
+                                    <a href="<?=base_url()?>dashboard/tambah_jumlah_produk/<?=$items['rowid']?>" class="btn btn-sm btn-success">plus
+                                    </a>
+                                </div>
+                            </td>
                             <td>
                                 <h5>Rp. <?php echo number_format($items['subtotal'], 0,',','.') ?></h5>
                             </td>
