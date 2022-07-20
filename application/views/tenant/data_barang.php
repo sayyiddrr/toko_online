@@ -33,7 +33,7 @@
               <td><?php echo $brg->nama_produk ?></td>
               <td><?php echo $brg->deskripsi ?></td>
               <td><?php echo $brg->kategoriID ?></td>
-              <td><?php echo $brg->harga_produk ?></td>
+              <td>Rp. <?php echo number_format($brg->harga_produk, 0,',','.') ?></td>
               <td><?php echo $brg->stok ?></td>
               <td><?php echo $brg->diskon ?></td>
               <td><?php echo anchor('tenant/data_barang/detail/'.$brg->produkID, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div') ?></td>
