@@ -53,10 +53,11 @@
                 <td class="text-center">Bulan</td>
                 <td class="text-center">Pendapatan</td>
             </tr>
+        
             <?php foreach($penjualan as $a) : ?>
                 <tr>
                     <td><?php echo $a->bulan ?></td>
-                    <td><?php echo $a->jumlah ?></td>
+                    <td>Rp. <?php echo number_format($a->jumlah, 0,',','.') ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
@@ -77,7 +78,7 @@
                 <tr>
                     <td><?php echo $k->nama_kategori ?></td>
                     <td><?php echo $k->bulan ?></td>
-                    <td><?php echo $k->jumlah ?></td>
+                    <td>Rp. <?php echo number_format($k->jumlah, 0,',','.') ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
@@ -98,7 +99,7 @@
                 <tr>
                     <td><?php echo $t->nama_tenant ?></td>
                     <td><?php echo $t->bulan ?></td>
-                    <td><?php echo $t->jumlah ?></td>
+                    <td>Rp. <?php echo number_format($t->jumlah, 0,',','.') ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>

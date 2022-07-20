@@ -4,7 +4,9 @@ class Categories extends CI_Controller{
     public function index()
     {
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
-        $data['produk']=$this->model_barang->tampil_data()->result();
+        $data['produk']=$this->db->query("SELECT 	*
+                                            FROM    tb_produk
+                                            INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID")->result();
         $data['brand'] = $this->db->query("SELECT tb_tenant.*, COUNT(tb_produk.produkID) AS jumlah 
                                             FROM tb_tenant, tb_produk
                                             WHERE tb_tenant.tenantID = tb_produk.tenantID
@@ -39,8 +41,12 @@ class Categories extends CI_Controller{
     
     public function elektronik()
     {
-        $data['elektronik'] = $this->model_kategori->
-            data_elektronik()->result();
+        $data['elektronik'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_kategori.kategoriID = 1")->result();
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('templates/karma/header', $data);
         $this->load->view('elektronik',$data);
@@ -49,8 +55,12 @@ class Categories extends CI_Controller{
 
     public function pakaian_pria()
     {
-        $data['pakaian_pria'] = $this->model_kategori->
-            data_pakaian_pria()->result();
+        $data['pakaian_pria'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_kategori.kategoriID = 2")->result();
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('templates/karma/header', $data);
         $this->load->view('pakaian_pria',$data);
@@ -59,8 +69,12 @@ class Categories extends CI_Controller{
 
     public function pakaian_wanita()
     {
-        $data['pakaian_wanita'] = $this->model_kategori->
-            data_pakaian_wanita()->result();
+        $data['pakaian_wanita'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_kategori.kategoriID = 3")->result();
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('templates/karma/header', $data);
         $this->load->view('pakaian_wanita',$data);
@@ -69,8 +83,12 @@ class Categories extends CI_Controller{
 
     public function pakaian_anak_anak()
     {
-        $data['pakaian_anak_anak'] = $this->model_kategori->
-            data_pakaian_anak_anak()->result();
+        $data['pakaian_anak_anak'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_kategori.kategoriID = 4")->result();
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('templates/karma/header', $data);
         $this->load->view('pakaian_anak_anak',$data);
@@ -79,8 +97,12 @@ class Categories extends CI_Controller{
 
     public function peralatan_olahraga()
     {
-        $data['peralatan_olahraga'] = $this->model_kategori->
-            data_peralatan_olahraga()->result();
+        $data['peralatan_olahraga'] = $this->db->
+            query("SELECT 	*
+                    FROM    tb_produk
+                    INNER JOIN tb_tenant ON tb_produk.tenantID = tb_tenant.tenantID
+                    INNER JOIN tb_kategori ON tb_produk.kategoriID = tb_kategori.kategoriID
+                    AND tb_kategori.kategoriID = 5")->result();
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
         $this->load->view('templates/karma/header', $data);
         $this->load->view('peralatan_olahraga',$data);

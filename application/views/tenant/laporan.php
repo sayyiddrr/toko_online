@@ -55,8 +55,8 @@
             </tr>
             <?php foreach($penjualan as $a) : ?>
                 <tr>
-                    <td><?php echo $a->bulan ?></td>
-                    <td><?php echo $a->jumlah ?></td>
+                    <td><?php echo $a->bulan?></td>
+                    <td>Rp. <?php echo number_format ($a->jumlah, 0,',','.') ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
@@ -106,7 +106,7 @@
             <?php foreach($produk as $b) : ?>
                 <tr>
                     <td><?php echo $b->nama_produk ?></td>
-                    <td><?php echo $b->jumlah ?></td>
+                    <td>Rp. <?php echo number_format ($b->jumlah, 0,',','.') ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>

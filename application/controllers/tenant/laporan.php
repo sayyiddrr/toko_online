@@ -35,4 +35,5 @@ class Laporan extends CI_Controller{
         $this->load->view('tenant/laporan', $data);
         $this->load->view('templates_tenant/footer');
     }
+    
 }

@@ -51,9 +51,8 @@ class Model_barang extends CI_Model{
         }
     }
 
-    public function detail_brg($produkID)
-    {
-        $result = $this->db->where('produkID',$produkID)->get('tb_produk');
+    public function detail_brg($produkID) 
+    {   $result = $this->db->where('produkID',$produkID)->get('tb_produk');
         if($result->num_rows() > 0){
             return $result->result();
         }else {

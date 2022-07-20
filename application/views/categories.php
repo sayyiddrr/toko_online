@@ -77,6 +77,7 @@
 								<img class="img-fluid" src="<?php echo base_url().'/uploads/'.$brg->gambar ?>" alt="">
 								<div class="product-details">
 									<h6><?php echo $brg->nama_produk ?></h6>
+									<h6> Toko <?php echo $brg->nama_tenant ?></h6>
 									<div class="price">
 										<h6>Rp. <?php echo number_format($brg->harga_produk, 0,',','.') ?></h6>
 									</div>
