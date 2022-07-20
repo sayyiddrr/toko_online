@@ -12,9 +12,10 @@ class Laporan extends CI_Controller{
             $tahun = date('Y');
         }
 
-        $data['penjualan'] = $this->db->query( "SELECT MONTH(tb_order.tgl_order) AS bulan, SUM(tb_orderdetail.harga) AS jumlah
-                                                FROM tb_orderdetail, tb_order
+        $data['penjualan'] = $this->db->query( "SELECT tb_bulan.nama_bulan AS bulan, SUM(tb_orderdetail.harga) AS jumlah
+                                                FROM tb_orderdetail, tb_order, tb_bulan
                                                 WHERE tb_orderdetail.orderID = tb_order.orderID
+                                                AND MONTH(tb_order.tgl_order) = tb_bulan.bulanID
                                                 AND YEAR(tb_order.tgl_order) = $tahun
                                                 GROUP BY MONTH(tb_order.tgl_order)")->result();
         
