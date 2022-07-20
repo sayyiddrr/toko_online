@@ -37,10 +37,18 @@
                 <i class="fa fa-fw fa-database"></i>
                 <span>Data Produk</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/order') ?>">
-                <i class="fa fa-fw fa-file"></i>
-                <span>Data Order</span></a>
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-fw fa-file"></i> <span>Data Order</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url('admin/order') ?>"><i class="fa fa-circle-o"></i> Order</a></li>
+            <li class="active"><a href="<?php echo base_url('admin/order/proses') ?>"><i class="fa fa-circle-o"></i> Order Masuk</a></li>
+          </ul>
         </li>
         <li class="treeview">
           <a href="#">

@@ -41,4 +41,33 @@ class Order extends CI_Controller{
         $this->load->view('templates_admin/footer');
         
     }
+
+    public function proses(){
+        $data['admin'] = $this->db->get_where('tb_admin', ['adminID' => $this->session->userdata('adminID')])->row_array();
+        $data['pesanan'] = $this->db->query("SELECT     *
+                                            FROM        tb_order
+                                            WHERE	    tb_order.status_order = 'sudah bayar'
+                                            ORDER BY    orderID DESC")->result();
+        $data['proses'] = $this->db->query("SELECT     *
+                                            FROM        tb_order
+                                            WHERE	    tb_order.status_order = 'dikirim'
+                                            ORDER BY    orderID DESC")->result();
+        $data['selesai'] = $this->db->query("SELECT     *
+                                            FROM        tb_order
+                                            WHERE	    tb_order.status_order = 'selesai'
+                                            ORDER BY    orderID DESC")->result();
+        $this->load->view('templates_admin/header',$data);
+        $this->load->view('templates_admin/sidebar',$data);
+        $this->load->view('admin/proses',$data);
+        $this->load->view('templates_admin/footer');
+
+    }
+    public function proses_kirim($id){
+        $data['admin'] = $this->db->get_where('tb_admin', ['adminID' => $this->session->userdata('adminID')])->row_array();
+        $where = array('orderID' =>$id);
+        $data['transaksi'] = $this->db->query( "UPDATE tb_order
+                                                SET status_order = 'proses'
+                                                WHERE tb_order.orderID = $id");
+        redirect('admin/order/proses');
+    }
 }

@@ -20,7 +20,7 @@ class Model_order extends CI_Model{
             'metode_pembayaran' => $metode_pembayaran,
             'metode_pengiriman' => $metode_pengiriman,
             'subtotal' => $subtotal,
-            'status_bayar' => 'belum',
+            'status_order' => 'belum',
 
             
         );
@@ -78,5 +78,10 @@ class Model_order extends CI_Model{
         }else {
             return false;
         }
+    }
+
+    public function update_order($data){
+        $this->db->where('orderID', $data['orderID']);
+        $this->db->update('tb_order', $data);
     }
 }
