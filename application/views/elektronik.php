@@ -111,8 +111,12 @@
 								<img class="img-fluid" src="<?php echo base_url().'/uploads/'.$brg->gambar ?>" alt="">
 								<div class="product-details">
 									<h6><?php echo $brg->nama_produk ?></h6>
+									<h6> Toko <?php echo $brg->nama_tenant ?></h6>
 									<div class="price">
 										<h6>Rp. <?php echo number_format($brg->harga_produk, 0,',','.') ?></h6>
+									</div>
+									<div class="stok">
+										<h7> Stok <?php echo $brg->stok ?></h7>
 									</div>
 									<div class="prd-bottom">
 
@@ -120,18 +124,14 @@
 											<span class="ti-bag"></span>
 											<p class="hover-text">add to bag</p>
 										</a>
+										<a href="<?php echo base_url('dashboard/detail/'.$brg->produkID) ?>" class="social-info">
+											<span class="lnr lnr-move"></span>
+											<p class="hover-text">detail</p>
+										</a>
 										<a href="" class="social-info">
 											<span class="lnr lnr-heart"></span>
-											<p class="hover-text">Wishlist</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-sync"></span>
-											<p class="hover-text">compare</p>
-										</a>
-										<a href="" class="social-info">
-											<span class="lnr lnr-move"></span>
-											<p class="hover-text">view more</p>
-										</a>
+											<p class="hover-text">Like</p>
+										</a>				
 									</div>
 								</div>
 							</div>
