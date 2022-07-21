@@ -55,6 +55,10 @@
                                 <option value="SazanPay">SazanPay 785444 </option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label>Upload Bukti Pembayaran</label><br>
+                            <input type="file" name="gambar" class="form-control">
+                        </div>
                         <div class="col-md-12 form-group">
                             <p>Masukkan TOTAL Harga sebesar Rp. <?php echo number_format($this->cart->total(), 0,',','.') ?></p>
                             <input type="text" class="form-control" id="subtotal" name="subtotal" placeholder="subtotal" value="<?=$this->session->flashdata('subtotal')?>">

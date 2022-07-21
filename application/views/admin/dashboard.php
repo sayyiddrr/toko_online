@@ -83,28 +83,85 @@
 
     <section class="content">
     
-  <!-- /.content-wrapper -->
-<section>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">Best Customer</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+        
+          <table id="example2" class="table table-bordered table-hover">
+          
+            <thead>
+            <tr>
+              <th>CUSTOMER ID</th>
+              <th>NAME</th>
+              <th>EMAIL</th>
+              <th>TOTAL ORDER</th>
+            </tr>
+            </thead>
+            <?php foreach($member as $t):?>
+            <tbody>
+            <tr>
+            <tr>
+              <td><?php echo $t->custID?></td>
+              <td><?php echo $t->nama?></td>
+              <td><?php echo $t->email?></td>
+              <td><?php echo $t->jumlah?></td>
+            </tr>
+            </tbody>
+            <?php   endforeach?>
+          </table>
+        
+        </div>
+        
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>
+    <div class="col-xs-6">
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">Best Tenant</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+        
+          <table id="example2" class="table table-bordered table-hover">
+          
+            <thead>
+            <tr>
+              <th>ENANT ID</th>
+              <th>BRAND</th>
+              <th>EMAIL</th>
+              <th>PRODUCT SOLD</th>
+            </tr>
+            </thead>
+            <?php foreach($tenant as $t):?>
+            <tbody>
+            <tr>
+            <tr>
+              <td><?php echo $t->tenantID?></td>
+              <td><?php echo $t->nama_tenant?></td>
+              <td><?php echo $t->email?></td>
+              <td><?php echo $t->jumlah?></td>
+            </tr>
+            </tbody>
+            <?php   endforeach?>
+          </table>
+        
+        </div>
+        
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>
+  </div>
 </section>
 </body>
 </html>

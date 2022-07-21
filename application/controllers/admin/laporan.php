@@ -19,19 +19,21 @@ class Laporan extends CI_Controller{
                                                 AND YEAR(tb_order.tgl_order) = $tahun
                                                 GROUP BY MONTH(tb_order.tgl_order)")->result();
         
-        $data['kategori'] = $this->db->query(  "SELECT MONTH(tb_order.tgl_order) AS bulan, SUM(tb_orderdetail.harga) AS jumlah, tb_kategori.nama_kategori
-                                                FROM tb_orderdetail, tb_order, tb_produk, tb_kategori
+        $data['kategori'] = $this->db->query(  "SELECT tb_bulan.nama_bulan AS bulan, SUM(tb_orderdetail.harga) AS jumlah, tb_kategori.nama_kategori
+                                                FROM tb_orderdetail, tb_order, tb_produk, tb_kategori, tb_bulan
                                                 WHERE tb_kategori.kategoriID = tb_produk.kategoriID
                                                 AND	tb_produk.produkID = tb_orderdetail.produkID
                                                 AND tb_orderdetail.orderID = tb_order.orderID
+                                                AND MONTH(tb_order.tgl_order) = tb_bulan.bulanID
                                                 AND YEAR(tb_order.tgl_order) = $tahun
                                                 GROUP BY  tb_kategori.nama_kategori, MONTH(tb_order.tgl_order)")->result();
     
-        $data['tenant'] = $this->db->query("SELECT MONTH(tb_order.tgl_order) AS bulan, SUM(tb_orderdetail.harga) AS jumlah, tb_tenant.nama_tenant
-                                            FROM tb_orderdetail, tb_order, tb_produk, tb_tenant
+        $data['tenant'] = $this->db->query("SELECT tb_bulan.nama_bulan AS bulan, SUM(tb_orderdetail.harga) AS jumlah, tb_tenant.nama_tenant
+                                            FROM tb_orderdetail, tb_order, tb_produk, tb_tenant, tb_bulan
                                             WHERE tb_tenant.tenantID = tb_produk.tenantID
                                             AND	tb_produk.produkID = tb_orderdetail.produkID
                                             AND tb_orderdetail.orderID = tb_order.orderID
+                                            AND MONTH(tb_order.tgl_order) = tb_bulan.bulanID
                                             AND YEAR(tb_order.tgl_order) = $tahun
                                             GROUP BY tb_tenant.nama_tenant, MONTH(tb_order.tgl_order)")->result();
 

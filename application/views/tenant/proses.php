@@ -52,6 +52,7 @@
                                 <td>
                                     <?php if ($trs->status_order == 'proses'){ ?>
                                     <a href="<?php echo base_url('tenant/order/proses_kirim/'.$trs->orderID) ?>" class="btn btn-sm bts-flat btn-primary">kirim</a>
+                                    <a href="<?php echo base_url('tenant/order/cancel/'.$trs->orderID) ?>" class="btn btn-sm bts-flat btn-danger">cancel</a>
                                     <?php } ?>
                                 </td>
                             </tr>

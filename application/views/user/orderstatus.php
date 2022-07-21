@@ -109,7 +109,7 @@
                                                     <th>Nama Barang</th>
                                                     <th>Tanggal</th>
                                                     <th>Ekspedisi</th>
-                                                    <th>Harga Produk</th>
+                                                    <th>Total</th>
                                                     <th>Action</th>
                                                 </tr>
                                                 <?php foreach($transaksi as $trs):?>
@@ -119,7 +119,7 @@
                                                     <td><?php echo $trs->tgl_order?></td>
                                                     <td><?php echo $trs->metode_pengiriman?></td>
                                                     <td>
-                                                        <?php echo $trs->harga_produk?><br>
+                                                        <?php echo $trs->subtotal?><br>
                                                         <?php if ($trs->status_order == 'belum'){ ?>
                                                             <span class="badge badge-danger">belum bayar</span>
                                                         <?php } elseif ($trs->status_order == 'sudah bayar'){ ?>
@@ -144,7 +144,7 @@
                                                     <th>Nama Barang</th>
                                                     <th>Tanggal</th>
                                                     <th>Ekspedisi</th>
-                                                    <th>Harga Produk</th>
+                                                    <th>Total</th>
                                                 </tr>
                                                 <?php foreach($proses as $trs):?>
                                                 <tr>
@@ -153,7 +153,7 @@
                                                     <td><?php echo $trs->tgl_order?></td>
                                                     <td><?php echo $trs->metode_pengiriman?></td>
                                                     <td>
-                                                        Rp. <?php echo number_format($trs->harga_produk, 0,',','.')?><br>
+                                                        Rp. <?php echo number_format($trs->subtotal, 0,',','.')?><br>
                                                         <span class="badge badge-primary">proses</span>
                                                     </td>
                                                 </tr>
@@ -167,7 +167,7 @@
                                                     <th>Nama Barang</th>
                                                     <th>Tanggal</th>
                                                     <th>Ekspedisi</th>
-                                                    <th>Harga Produk</th>
+                                                    <th>Total</th>
                                                 </tr>
                                                 <?php foreach($tunggu as $trs):?>
                                                 <tr>
@@ -176,7 +176,7 @@
                                                     <td><?php echo $trs->tgl_order?></td>
                                                     <td><?php echo $trs->metode_pengiriman?></td>
                                                     <td>
-                                                        Rp. <?php echo number_format($trs->harga_produk, 0,',','.')?><br>
+                                                        Rp. <?php echo number_format($trs->subtotal, 0,',','.')?><br>
                                                         <span class="badge badge-primary">shipped</span>
                                                         
                                                     </td>
@@ -192,7 +192,7 @@
                                                     <th>Nama Produk</th>
                                                     <th>Tanggal</th>
                                                     <th>Ekspedisi</th>
-                                                    <th>Harga Produk</th>
+                                                    <th>Total</th>
                                                     <th>Action</th>
                                                 </tr>
                                                 <?php foreach($kirim as $trs):?>
@@ -202,7 +202,7 @@
                                                     <td><?php echo $trs->tgl_order?></td>
                                                     <td><?php echo $trs->metode_pengiriman?></td>
                                                     <td>
-                                                        Rp. <?php echo number_format($trs->harga_produk, 0,',','.')?><br>
+                                                        Rp. <?php echo number_format($trs->subtotal, 0,',','.')?><br>
                                                     </td>
                                                     <td>
                                                         <?php if ($trs->status_order == 'dikirim'){ ?>

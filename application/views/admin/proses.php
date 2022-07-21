@@ -50,6 +50,7 @@
                                 <td>
                                     <?php if ($trs->status_order == 'sudah bayar'){ ?>
                                     <a href="<?php echo base_url('admin/order/proses_kirim/'.$trs->orderID) ?>" class="btn btn-sm bts-flat btn-primary">proses</a>
+                                    <a href="<?php echo base_url('admin/order/cancel/'.$trs->orderID) ?>" class="btn btn-sm bts-flat btn-danger">cancel</a>
                                     <?php } ?>
                                 </td>
                             </tr>

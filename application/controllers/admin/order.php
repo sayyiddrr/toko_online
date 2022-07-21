@@ -70,4 +70,13 @@ class Order extends CI_Controller{
                                                 WHERE tb_order.orderID = $id");
         redirect('admin/order/proses');
     }
+
+    public function cancel($id){
+        $data['admin'] = $this->db->get_where('tb_admin', ['adminID' => $this->session->userdata('adminID')])->row_array();
+        $where = array('orderID' =>$id);
+        $data['transaksi'] = $this->db->query( "UPDATE tb_order
+                                                SET status_order = 'gagal'
+                                                WHERE tb_order.orderID = $id");
+        redirect('admin/order/proses');
+    }
 }
