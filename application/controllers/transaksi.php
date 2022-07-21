@@ -96,14 +96,14 @@ class Transaksi extends CI_Controller{
     public function myorder(){
         $data['customer'] = $this->db->get_where('tb_customer', ['username' => $this->session->userdata('username')])->row_array();
         $custID = $data['customer']['custID'];
-        $data['pesanan'] = $this->db->query( "SELECT *
-        FROM	tb_customer, tb_order, tb_produk, tb_orderdetail
-        WHERE		tb_order.custID = tb_customer.custID
-        AND     tb_produk.produkID = tb_orderdetail.produkID
-        AND     tb_order.orderID = tb_orderdetail.orderID
-        AND		tb_customer.custID = $custID
-        AND     tb_order.status_order = 'selesai'
-        ORDER BY tb_order.orderID DESC")->result();
+        $data['pesanan'] = $this->db->query( "  SELECT *
+                                                FROM	tb_customer, tb_order, tb_produk, tb_orderdetail
+                                                WHERE		tb_order.custID = tb_customer.custID
+                                                AND     tb_produk.produkID = tb_orderdetail.produkID
+                                                AND     tb_order.orderID = tb_orderdetail.orderID
+                                                AND		tb_customer.custID = $custID
+                                                AND     tb_order.status_order = 'selesai'
+                                                ORDER BY tb_order.orderID DESC")->result();
 
         $this->load->view('user/myorder', $data);
     }

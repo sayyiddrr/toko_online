@@ -89,7 +89,7 @@
                                             <a class="nav-link active" id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="true">Order</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">Packed</a>
+                                            <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">Process</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" id="custom-tabs-four-messages-tab" data-toggle="pill" href="#custom-tabs-four-messages" role="tab" aria-controls="custom-tabs-four-messages" aria-selected="false">Shipped</a>
@@ -154,7 +154,11 @@
                                                     <td><?php echo $trs->metode_pengiriman?></td>
                                                     <td>
                                                         Rp. <?php echo number_format($trs->subtotal, 0,',','.')?><br>
-                                                        <span class="badge badge-primary">proses</span>
+                                                        <?php if ($trs->status_order == 'gagal'){ ?>
+                                                            <span class="badge badge-danger">cancelled</span>
+                                                        <?php } else { ?>
+                                                            <span class="badge badge-primary">proses</span>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                                 <?php   endforeach?>

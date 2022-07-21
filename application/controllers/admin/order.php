@@ -18,7 +18,8 @@ class Order extends CI_Controller{
         $data['admin'] = $this->db->get_where('tb_admin', ['adminID' => $this->session->userdata('adminID')])->row_array();
         $data['invoice'] = $this->db->query("SELECT 	*
                                             FROM 	    tb_order
-                                            INNER JOIN tb_customer ON tb_order.custID = tb_customer.custID")->result(); 
+                                            INNER JOIN tb_customer ON tb_order.custID = tb_customer.custID
+                                            ORDER BY tb_order.orderID DESC")->result(); 
         $this->load->view('templates_admin/header',$data);
         $this->load->view('templates_admin/sidebar',$data);
         $this->load->view('admin/invoice',$data);

@@ -87,7 +87,7 @@
                                                     <th>Nama Produk</th>
                                                     <th>Tanggal</th>
                                                     <th>Ekspedisi</th>
-                                                    <th>Harga Produk</th>
+                                                    <th>total</th>
                                                     
                                                 </tr>
                                                 <?php foreach($pesanan as $psn):?>
@@ -97,7 +97,7 @@
                                                     <td><?php echo $psn->tgl_order?></td>
                                                     <td><?php echo $psn->metode_pengiriman?></td>
                                                     <td>
-                                                        Rp. <?php echo number_format($psn->harga_produk, 0,',','.')?><br>
+                                                        Rp. <?php echo number_format($psn->subtotal, 0,',','.')?><br>
                                                     </td>
                                                     <td>
                                                         <?php if ($psn->status_order == 'dikirim'){ ?>
