@@ -136,7 +136,7 @@
           
             <thead>
             <tr>
-              <th>ENANT ID</th>
+              <th>TENANT ID</th>
               <th>BRAND</th>
               <th>EMAIL</th>
               <th>PRODUCT SOLD</th>
