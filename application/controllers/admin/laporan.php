@@ -35,8 +35,8 @@ class Laporan extends CI_Controller{
                                             AND tb_orderdetail.orderID = tb_order.orderID
                                             AND MONTH(tb_order.tgl_order) = tb_bulan.bulanID
                                             AND YEAR(tb_order.tgl_order) = $tahun
-                                            GROUP BY tb_tenant.nama_tenant, MONTH(tb_order.tgl_order)")->result();
-
+                                            GROUP BY tb_tenant.nama_tenant, MONTH(tb_order.tgl_order)
+                                            ORDER BY MONTH(tb_order.tgl_order) ASC, jumlah DESC")->result();
 
         $this->load->view('templates_admin/header',$data);
         $this->load->view('templates_admin/sidebar',$data);
